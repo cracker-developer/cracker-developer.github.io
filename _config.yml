@@ -17,9 +17,7 @@ timezone: Asia/Baghdad
 title: 0xcracker # the main title
 
 # it will display as the subtitle
-tagline: >
-  let's diving into Technologies......
-  (❁´◡`❁)
+tagline: let's diving into Technologies......(❁´◡`❁)
 
 description: >- # used by seo meta and the atom feed
   let's diving into Technologies
