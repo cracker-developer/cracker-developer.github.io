@@ -2,6 +2,12 @@
 
 source "https://rubygems.org"
 
+# https://github.com/dommmel/jekyll-youtube
+group :jekyll_plugins do
+  gem "jekyll-youtube"
+end
+
+# to posts
 gem 'jekyll-compose', group: [:jekyll_plugins]
 
 gem "jekyll-theme-chirpy", "~> 7.1"
