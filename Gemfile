@@ -1,17 +1,6 @@
 # frozen_string_literal: true
 
 source "https://rubygems.org"
-gem 'logger'
-gem 'csv'
-gem 'base64'
-
-# https://github.com/dommmel/jekyll-youtube
-group :jekyll_plugins do
-  gem "jekyll-youtube"
-end
-
-# to posts
-gem 'jekyll-compose', group: [:jekyll_plugins]
 
 gem "jekyll-theme-chirpy", "~> 7.1"
 
@@ -23,3 +12,16 @@ platforms :mingw, :x64_mingw, :mswin, :jruby do
 end
 
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+
+# some important library
+gem 'logger'
+gem 'csv'
+gem 'base64'
+
+# https://github.com/dommmel/jekyll-youtube
+group :jekyll_plugins do
+  gem "jekyll-youtube"
+end
+
+# to posts
+gem 'jekyll-compose', group: [:jekyll_plugins]
