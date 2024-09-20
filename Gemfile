@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 source "https://rubygems.org"
+gem 'logger'
+gem 'csv'
+gem 'base64'
 
 # https://github.com/dommmel/jekyll-youtube
 group :jekyll_plugins do
