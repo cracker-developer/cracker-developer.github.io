@@ -1,5 +1,5 @@
 ---
-title: 'TryHackMe: Soupedecode 01 CTF'
+title: 'TryHackMe: Soupedecode 01 Walkthrough'
 author: 0xcracker
 categories: [TryHackMe]
 tags: [windows, rustscan, SMB, enum4linux, nxc, netexec, smbclient, impacket, impacket-smbclient, impacket-smbexec, impacket-psexec, impacket-GetUserSPNs, john, hashcat, rid-brute, Password Spraying, Hash Spraying, crackmapexec, Kerberoasting, kerbrute, kerberoast, SPN, TGS, Kerberoastable, AS-REP Roasting, AD, DC, Active Directory, pass-the-hash, RCE]
@@ -7,17 +7,16 @@ render_with_liquid: true
 img_path: /images/Takeover
 image:
   path: /images/TryHackMe/Soupedecode01/room_image.webp
-  
 ---
 
-<a href="https://tryhackme.com/room/soupedecode01" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #fff; text-decoration: none;">TryHackMe | Soupedecode 01 CTF Challenge
+<a href="https://tryhackme.com/room/soupedecode01" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">            TryHackMe | Soupedecode 01 CTF Challenge
   <img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
   <span style="font-size: 16px;"></span>
 </a>
 
 🧰 Writeup Overview
 
-This writeup details the step-by-step exploitation of an Active Directory (`AD`) environment vulnerable to `Kerberos attacks`, with a focus on `AS-REP Roasting`. It covers the initial reconnaissance identifying open `AD`-related services like `Kerberos`, `LDAP`, and `SMB`. Using these, the attacker extracts encrypted ticket hashes from service accounts without pre-authentication, then cracks them offline to reveal passwords. Finally, the writeup demonstrates post-exploitation techniques including `SMB` access and lateral movement, highlighting common weaknesses in `AD` setups and how to detect and exploit them.
+This writeup details the step-by-step exploitation of an Active Directory(`AD`) environment vulnerable to `Kerberos attacks`, with a focus on `AS-REP Roasting`. It covers the initial reconnaissance identifying open `AD`-related services like `Kerberos`, `LDAP`, and `SMB`. Using these, the attacker extracts encrypted ticket hashes from service accounts without pre-authentication, then cracks them offline to reveal passwords. Finally, the writeup demonstrates post-exploitation techniques including `SMB` access and lateral movement, highlighting common weaknesses in `AD` setups and how to detect and exploit them.
 
 ## Reconnaissance
 

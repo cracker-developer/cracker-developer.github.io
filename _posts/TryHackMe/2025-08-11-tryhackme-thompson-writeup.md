@@ -1,5 +1,5 @@
 ---
-title: 'TryHackMe: Thompson CTF'
+title: 'TryHackMe: Thompson CTF Walkthrough' 
 author: 0xcracker
 categories: [TryHackMe]
 tags: [ffuf, Subdomain-Enumeration, Subdirectory-Enumeration, rustscan, tomcat, crontab, rlwrap, msfvenom]
@@ -7,15 +7,14 @@ render_with_liquid: true
 img_path: /images/Takeover
 image:
   path: /images/TryHackMe/Thompson/room_image.webp
-  
 ---
 
-<a href="https://tryhackme.com/room/bsidesgtthompson" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #fff; text-decoration: none;">TryHackMe | Thompson CTF Challenge
+<a href="https://tryhackme.com/room/bsidesgtthompson" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">TryHackMe | Thompson CTF Challenge
   <img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
   <span style="font-size: 16px;"></span>
 </a>
 
-🧰 Overview
+🧰 Writeup Overview
 
 Compromised outdated Apache Tomcat using default credentials and a malicious WAR payload for initial access, then escalated to root via a writable cron-executed script.
 

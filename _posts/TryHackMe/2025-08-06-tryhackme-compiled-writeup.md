@@ -1,5 +1,5 @@
 ---
-title: 'TryHackMe: Compiled CTF'
+title: 'TryHackMe: Compiled CTF Walkthrough'
 author: 0xcracker
 categories: [TryHackMe]
 tags: [Binary, Reverse-Engineering, strings, ltrace, ghidra, strcmp, strcmp, C]
@@ -7,15 +7,14 @@ render_with_liquid: true
 img_path: /images/Compiled
 image:
   path: /images/TryHackMe/Compiled/room_image.webp
-  
 ---
 
-<a href="https://tryhackme.com/room/compiled" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #fff; text-decoration: none;">TryHackMe | Compiled CTF Challenge
+<a href="https://tryhackme.com/room/compiled" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">TryHackMe | Compiled CTF Challenge
   <img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
   <span style="font-size: 16px;"></span>
 </a>
 
-🧰 Overview
+🧰 Writeup Overview
 
 This writeup explains the reverse-engineering of the provided ELF binary `Compiled.Compiled`, culminating in finding the correct input that triggers the message **Correct!**.
 

@@ -1,5 +1,5 @@
 ---
-title: 'TryHackMe: Lookup CTF'
+title: 'TryHackMe: Lookup CTF Walkthrough'
 author: 0xcracker
 categories: [TryHackMe]
 tags: [web, rustscan, hydra, feroxbuster, ffuf, DNS, Subdomain-Enumeration, searchsploit, msfconsole, RCE, command injection, ssh, strings, time, suid, sudo, strace, busybox, Spoof-Binary, PATH-Hijack]
@@ -9,11 +9,12 @@ image:
   path: /images/TryHackMe/Lookup/room_image.webp
 ---
 
-<a href="https://tryhackme.com/room/lookup" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #fff; text-decoration: none;">TryHackMe | Lookup CTF Challenge
+<a href="https://tryhackme.com/room/lookup" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">TryHackMe | Lookup CTF Challenge
   <img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
   <span style="font-size: 16px;"></span>
 </a>
 
+🧰 Writeup Overview
 
 is a `Linux-based machine` that focuses on:
 

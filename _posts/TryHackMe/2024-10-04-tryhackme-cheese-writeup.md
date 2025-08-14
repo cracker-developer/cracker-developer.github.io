@@ -1,5 +1,5 @@
 ---
-title: 'TryHackMe: Cheese CTF'
+title: 'TryHackMe: Cheese CTF Walkthrough'
 author: 0xcracker
 categories: [TryHackMe]
 tags: [web, rustscan, portspoofing, feroxbuster, sqli, sqlmap, LFI, RCE, ssh, service, timer, suid, sudo, sysmemstl, grep, openssl, unshadow]
@@ -8,7 +8,15 @@ img_path: /images/Cheese-CTF
 image:
   path: /images/TryHackMe/Cheese-CTF/room_image.webp
 ---
-In the Cheese CTF, we bypassed the login page using an `SQL injection` and discovered an endpoint `vulnerable to LFI`. By `chaining PHP filters`, we turned the LFI into `RCE` and gained an initial foothold on the system. After that, we exploited a `writable authorized_keys file` to pivot to another user. As this new user, we fixed a `syntax error in a timer` and used `sudo privileges` to start it, which allowed us to create a `SUID binary`. Finally, by exploiting this binary, we `escalated privileges to root`.
+
+<a href="https://tryhackme.com/room/cheesectfv10" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
+  <img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">< style="text-align: center; flex-grow: 1; margin: 0; font-size: 16px;">TryHackMe | Cheese CTF Challenge
+  <span style="font-size: 16px;"></span>
+</a>
+
+🧰 Writeup Overview
+
+we bypassed the login page using an `SQL injection` and discovered an endpoint `vulnerable to LFI`. By `chaining PHP filters`, we turned the LFI into `RCE` and gained an initial foothold on the system. After that, we exploited a `writable authorized_keys file` to pivot to another user. As this new user, we fixed a `syntax error in a timer` and used `sudo privileges` to start it, which allowed us to create a `SUID binary`. Finally, by exploiting this binary, we `escalated privileges to root`.
 ## Initial Enumeration
 
 ### rustscan
