@@ -218,14 +218,14 @@ This combo is powerful—auth bypass lets attackers reach an interface, and RCE 
 - ### Manual Exploitation Approach
 
 
-<a href="https://www.rapid7.com/blog/post/2024/03/04/etr-cve-2024-27198-and-cve-2024-27199-jetbrains-teamcity-multiple-authentication-bypass-vulnerabilities-fixed/" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #fff; text-decoration: none;">CVE-2024-27198 and CVE-2024-27199: JetBrains TeamCity Multiple Authentication Bypass Vulnerabilities (FIXED) | Rapid7 Blog
+<a href="https://www.rapid7.com/blog/post/2024/03/04/etr-cve-2024-27198-and-cve-2024-27199-jetbrains-teamcity-multiple-authentication-bypass-vulnerabilities-fixed/" style="display: flex; align-items: center; background-color: #a1a1a1ff; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #fff; text-decoration: none;">CVE-2024-27198 and CVE-2024-27199: JetBrains TeamCity Multiple Authentication Bypass Vulnerabilities (FIXED) | Rapid7 Blog
   <img src="https://www.rapid7.com/includes/img/favicon.ico" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
   <span style="font-size: 16px;"></span>
 </a>
 
 A detailed explanation can be found here:
 
-<a href="https://www.vicarius.io/vsociety/posts/teamcity-auth-bypass-to-rce-cve-2024-27198-and-cve-2024-27199" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #fff; text-decoration: none;">TeamCity Auth bypass to RCE (CVE-2024-27198 and CVE-2024-27199) | vicarius
+<a href="https://www.vicarius.io/vsociety/posts/teamcity-auth-bypass-to-rce-cve-2024-27198-and-cve-2024-27199" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">TeamCity Auth bypass to RCE (CVE-2024-27198 and CVE-2024-27199) | vicarius
   <img src="https://www.vicarius.io/vsociety/favicon.svg" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
   <span style="font-size: 16px;"></span>
 </a>
@@ -346,7 +346,7 @@ nc -lvnp 4444
 
 - ### Automated Exploitation Approach
 
-<a href="https://github.com/W01fh4cker/CVE-2024-27198-RCE" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #fff; text-decoration: none;">CVE-2024-27198 & CVE-2024-27199 Authentication Bypass --> RCE in JetBrains TeamCity Pre-2023.11.4 | github
+<a href="https://github.com/W01fh4cker/CVE-2024-27198-RCE" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">CVE-2024-27198 & CVE-2024-27199 Authentication Bypass --> RCE in JetBrains TeamCity Pre-2023.11.4 | github
   <img src="https://github.githubassets.com/favicons/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
   <span style="font-size: 16px;"></span>
 </a>
@@ -364,7 +364,7 @@ Use `Firefox browser` if you have trouble playing the video.
 
 you can check here about how use Splunk
 
-<a href="https://docs.splunk.com/Documentation/Splunk" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #fff; text-decoration: none;">usage Splunk | Splunk® Enterprise
+<a href="https://docs.splunk.com/Documentation/Splunk" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">usage Splunk | Splunk® Enterprise
   <img src="https://docs.splunk.com/favicon.ico" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
   <span style="font-size: 16px;"></span>
 </a>

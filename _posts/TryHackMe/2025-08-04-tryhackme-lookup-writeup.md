@@ -462,7 +462,7 @@ Output:
 ```
 you can check here
 
-<a href="https://gtfobins.github.io/gtfobins/look/" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #fff; text-decoration: none;">GTFOBins | look
+<a href="https://gtfobins.github.io/gtfobins/look/" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">GTFOBins | look
   <img src="/images/TryHackMe/gtfobins.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
   <span style="font-size: 16px;"></span>
 </a>

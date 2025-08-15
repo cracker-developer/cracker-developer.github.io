@@ -9,8 +9,8 @@ image:
   path: /images/TryHackMe/Cheese/room_image.webp
 ---
 
-<a href="https://tryhackme.com/room/cheesectfv10" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
-  <img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">< style="text-align: center; flex-grow: 1; margin: 0; font-size: 16px;">TryHackMe | Cheese CTF Challenge
+<a href="https://tryhackme.com/r/room/brains" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">TryHackMe | Cheese CTF Challenge
+  <img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
   <span style="font-size: 16px;"></span>
 </a>
 
@@ -417,7 +417,7 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data)
 ## Shell as comte
 we can using linpeas simply
 
-<a href="https://linpeas.sh/" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #fff; text-decoration: none;">linpeas
+<a href="https://linpeas.sh/" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">linpeas
   <img src="/images/TryHackMe/linpeas.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
   <span style="font-size: 16px;"></span>
 </a>
