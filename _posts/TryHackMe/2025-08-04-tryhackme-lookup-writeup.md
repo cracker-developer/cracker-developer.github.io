@@ -4,7 +4,7 @@ author: 0xcracker
 categories: [TryHackMe]
 tags: [web, rustscan, hydra, feroxbuster, ffuf, DNS, Subdomain-Enumeration, searchsploit, msfconsole, RCE, command injection, ssh, strings, time, suid, sudo, strace, busybox, Spoof-Binary, PATH-Hijack]
 render_with_liquid: true
-img_path: /images/Lookup
+img_path: /images/TryHackMe/Lookup
 image:
   path: /images/TryHackMe/Lookup/room_image.webp
 ---

@@ -4,7 +4,7 @@ author: 0xcracker
 categories: [TryHackMe]
 tags: [Binary, Reverse-Engineering, strings, ltrace, ghidra, strcmp, strcmp, C]
 render_with_liquid: true
-img_path: /images/Compiled
+img_path: /images/TryHackMe/Compiled
 image:
   path: /images/TryHackMe/Compiled/room_image.webp
 ---

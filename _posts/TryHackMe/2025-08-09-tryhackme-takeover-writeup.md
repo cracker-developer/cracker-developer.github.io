@@ -4,7 +4,7 @@ author: 0xcracker
 categories: [TryHackMe]
 tags: [ffuf, Subdomain-Enumeration, DNS, DNS-Enumeration, Subdirectory-Enumeration]
 render_with_liquid: true
-img_path: /images/Takeover
+img_path: /images/TryHackMe/Takeover
 image:
   path: /images/TryHackMe/TakeOver/room_image.webp
 ---

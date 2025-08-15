@@ -1,10 +1,10 @@
 ---
-title: 'TryHackMe: Soupedecode 01 Walkthrough'
+title: 'TryHackMe: Soupedecode 01 CTF Walkthrough'
 author: 0xcracker
 categories: [TryHackMe]
 tags: [windows, rustscan, SMB, enum4linux, nxc, netexec, smbclient, impacket, impacket-smbclient, impacket-smbexec, impacket-psexec, impacket-GetUserSPNs, john, hashcat, rid-brute, Password Spraying, Hash Spraying, crackmapexec, Kerberoasting, kerbrute, kerberoast, SPN, TGS, Kerberoastable, AS-REP Roasting, AD, DC, Active Directory, pass-the-hash, RCE]
 render_with_liquid: true
-img_path: /images/Takeover
+img_path: /images/TryHackMe/Soupedecode01
 image:
   path: /images/TryHackMe/Soupedecode01/room_image.webp
 ---

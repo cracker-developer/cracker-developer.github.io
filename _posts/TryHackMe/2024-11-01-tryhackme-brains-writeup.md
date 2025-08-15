@@ -4,7 +4,7 @@ author: 0xcracker
 categories: [TryHackMe]
 tags: [web-application, rustscan, dirsearch, sed, curl, authentication-bypass, RCE, splunk]
 render_with_liquid: true
-img_path: /images/Cheese-CTF
+img_path: /images/TryHackMe/Brains
 image:
   path: /images/TryHackMe/Brains/room_image.webp
 ---

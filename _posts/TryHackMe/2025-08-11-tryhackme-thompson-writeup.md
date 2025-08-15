@@ -4,7 +4,7 @@ author: 0xcracker
 categories: [TryHackMe]
 tags: [ffuf, Subdomain-Enumeration, Subdirectory-Enumeration, rustscan, tomcat, crontab, rlwrap, msfvenom]
 render_with_liquid: true
-img_path: /images/Takeover
+img_path: /images/TryHackMe/Thompson
 image:
   path: /images/TryHackMe/Thompson/room_image.webp
 ---
