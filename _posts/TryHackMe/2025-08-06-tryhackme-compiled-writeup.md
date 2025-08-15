@@ -293,3 +293,13 @@ Correct!+++ exited (status 0) +++
 
 ---
 
+<style>
+.center img {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+.wrap pre{
+    white-space: pre-wrap;
+}
+</style>

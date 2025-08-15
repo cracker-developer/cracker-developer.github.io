@@ -254,7 +254,9 @@ Upload & Deploy a malicious WAR
 
 Refresh page then Click on `/shell` such below:
 
-![](/gifs/click.gif)
+<div style="text-align: center;">
+<img src="/gifs/click.gif" alt="GIF" style="max-width:2400px; height:450px; border-radius:8px;">
+</div>
 
 ![](/images/TryHackMe/Thompson/below2.png)
 
@@ -359,6 +361,19 @@ Now we are root
 
 ![](/images/TryHackMe/Thompson/root.png)
 
+<div style="text-align: center;">
+<img src="/gifs/tierd.gif" alt="GIF" style="max-width:2400px; height:450px; border-radius:8px;">
+</div>
+
 ---
 
-![](/gifs/tierd.gif)
+<style>
+.center img {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+.wrap pre{
+    white-space: pre-wrap;
+}
+</style>

@@ -438,13 +438,11 @@ impacket-smbclient -hashes :e41da7e79a4c76dbd9cf79d1cb325559 'SOUPEDECODE.LOCAL/
 
 ![](/images/TryHackMe/Soupedecode01/root-smb.png)
 
----
-
+<div style="text-align: center;">
 <img src="/gifs/crazy.gif" alt="GIF" style="max-width:2400px; height:450px; border-radius:8px;">
+</div>
 
-
-
-
+---
 
 <style>
 .center img {

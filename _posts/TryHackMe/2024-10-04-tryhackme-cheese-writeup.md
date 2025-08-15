@@ -506,8 +506,9 @@ THM{9f2ce3df1beeecaf
 We can read the root flag directly if you want to remain just a script kiddie, not a professional hacker.
 
 <div style="text-align: center;">
-  <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnFocmR0OGNuY3QzNHM3M2xtbDN6c2xzdW0zOTA0djRzMnFqYWwyOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/r1wGrCEZ4zTeU/giphy.gif" alt="gif">
+<img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnFocmR0OGNuY3QzNHM3M2xtbDN6c2xzdW0zOTA0djRzMnFqYWwyOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/r1wGrCEZ4zTeU/giphy.gif" alt="GIF" style="max-width:2400px; height:450px; border-radius:8px;">
 </div>
+
 
 ```sh
 comte@cheesectf:~$ LFILE=/root/root.txt
@@ -894,3 +895,16 @@ Press 'q' or Ctrl-C to abort, almost any other key for status
 0g 0:00:08:48 2.48% (ETA: 01:36:58) 0g/s 782.0p/s 1564c/s 1564C/s janilson..ja1991
 ```
 ![](/images/TryHackMe/Cheese/Congratulations.png)
+
+---
+
+<style>
+.center img {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+.wrap pre{
+    white-space: pre-wrap;
+}
+</style>

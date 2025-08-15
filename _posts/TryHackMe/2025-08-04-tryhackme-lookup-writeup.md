@@ -491,5 +491,18 @@ cat root.txt
 ```
 
 <div style="text-align: center;">
-  <img src="/gifs/labubu.gif" alt="gif">
+  <img src="/gifs/labubu.gif" alt="GIF" style="max-width:2400px; height:450px; border-radius:8px;">
 </div>
+
+---
+
+<style>
+.center img {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+.wrap pre{
+    white-space: pre-wrap;
+}
+</style>

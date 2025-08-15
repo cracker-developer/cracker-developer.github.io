@@ -376,5 +376,18 @@ you can check here about how use Splunk
 
 
 <div style="text-align: center;">
-  <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3dzNjZwZ2V3ZDFmZmRiZnNmZXdhc3hnMzFzMm1tYTBreXhiM3RzNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1xucXbDnMIYkU/giphy.gif" alt="gif">
+<img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3dzNjZwZ2V3ZDFmZmRiZnNmZXdhc3hnMzFzMm1tYTBreXhiM3RzNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1xucXbDnMIYkU/giphy.gif" alt="GIF" style="max-width:2400px; height:450px; border-radius:8px;">
 </div>
+
+---
+
+<style>
+.center img {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+.wrap pre{
+    white-space: pre-wrap;
+}
+</style>
