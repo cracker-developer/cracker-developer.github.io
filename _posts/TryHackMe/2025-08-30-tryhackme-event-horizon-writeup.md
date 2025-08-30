@@ -17,6 +17,7 @@ We have a zip file `evidence-1724741326043.zip` that contains the network captur
   <img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
   <span style="font-size: 16px;"></span>
 </a>
+{: .box-button }
 
 ```
 unzip evidence-1724741326043.zip
@@ -77,6 +78,7 @@ Active web browsing (image/text-heavy) and email via POP3/SMTP (no IMAP usage de
   <img src="https://tshark.dev/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
   <span style="font-size: 16px;"></span>
 </a>
+{: .box-button }
 
 Basically, we could use Wireshark but we used Tshark for practical on new technologies.
 
@@ -146,6 +148,7 @@ To follow a specific `TCP stream`, replace `NumTcpStream` with the actual stream
   <source src="{{ '/videos/TryHackMe/Event-Horizon/pop.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+{: .video-responsive }
 
 OR if you want to follow all streams one by one, you can use a loop:
 
@@ -406,6 +409,7 @@ Now we can locate file uploaded `radius.ps1` via `http` traffic
   <source src="{{ '/videos/TryHackMe/Event-Horizon/GET.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+{: .video-responsive }
 
 #### Method || Using Tshark
 
@@ -503,7 +507,7 @@ So now We have Initial AES key as shown below:
 
 **Q5: What is the Administrator NTLM hash that the attacker found?**
 
-We can manually decrypt C2 traffic using the `AESSetupKey we have. The AESSetupKey is the initial key used by the Covenant implant to encrypt its `RSA public key` before sending it to the server. This allows the server to securely send back a session key, which is then used for all further encrypted communication.
+We can manually decrypt C2 traffic using the `AESSetupKey` we have. The AESSetupKey is the initial key used by the Covenant implant to encrypt its `RSA public key` before sending it to the server. This allows the server to securely send back a session key, which is then used for all further encrypted communication.
 
 To decrypt the traffic between the implant and the server, you can use tools like [CyberChef](https://gchq.github.io/CyberChef/){: .redirect } or the specialized [CovenantDecryptor](https://github.com/naacbin/CovenantDecryptor){: .redirect } Python tool. CovenantDecryptor automates the process: you provide the AESSetupKey and the captured traffic, and it extracts and decrypts the messages, revealing the actual commands and data.
 
@@ -511,6 +515,7 @@ To decrypt the traffic between the implant and the server, you can use tools lik
   <img src="https://github.githubassets.com/favicons/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
   <span style="font-size: 16px;"></span>
 </a>
+{: .box-button }
 
 Now I will create a virtual environment for CovenantDecryptor
 
@@ -609,6 +614,7 @@ I hope you found this helpful, see you in another writeups.
 <div style="text-align: center;">
 <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2F3cGw3M2h0NG1xOTRqYnV1bDA2ZmdhZTA4dnE0NjRjNG80dGprZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SV5k9Ulnk9LdgYnjbe/giphy.gif" alt="GIF" style="max-width:2200px; height:400px; border-radius:8px;">
 </div>
+{: .gif-responsive }
 
 ---
 
@@ -622,6 +628,31 @@ I hope you found this helpful, see you in another writeups.
 .wrap pre{
     white-space: pre-wrap;
 }
+
+/* Mobile-only styles */
+@media (max-width: 768px) {
+  .gif-responsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  .video-responsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Center box buttons on mobile only */
+  .box-button {
+    justify-content: center !important;
+  }
+  
+  .box-button span {
+    text-align: center !important;
+  }
+}
+
 </style>
 
 <script>
