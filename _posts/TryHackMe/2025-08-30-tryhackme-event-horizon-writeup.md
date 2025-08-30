@@ -55,8 +55,11 @@ Content Breakdown:
 Minimal `IPv6`/`ICMPv6`.
 Standard `DNS`/`mDNS`/`LLMNR` for name resolution.
 
-> Notable Absence: `IMAP` protocol (common for synced email) is not present—suggests email is fetched via POP3 (`local retrieval`, not server synchronization). [POP vs IMAP](https://support.microsoft.com/en-us/office/what-is-the-difference-between-pop-and-imap-85c0e47f-931d-4035-b409-af3318b194a8)
-{: .prompt-info .redirect }
+
+> Notable Absence: `IMAP` protocol (common for synced email) is not present—suggests email is fetched via POP3 (`local retrieval`, not server synchronization).<a href="https://support.microsoft.com/en-us/office/what-is-the-difference-between-pop-and-imap-85c0e47f-931d-4035-b409-af3318b194a8" class="redirect">POP vs IMAP</a>
+{: .prompt-info }
+
+
 
 Conclusion:
 Active web browsing (image/text-heavy) and email via POP3/SMTP (no IMAP usage detected).
@@ -74,7 +77,7 @@ Active web browsing (image/text-heavy) and email via POP3/SMTP (no IMAP usage de
 
 ### Using Tshark With POP
 
-<a href="https://tshark.dev/" target="_blank" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TSHARK.DEV
+<a href="https://tshark.dev/" target="_blank" class=".box-button" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TSHARK.DEV
   <img src="https://tshark.dev/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
   <span style="font-size: 16px;"></span>
 </a>
@@ -441,7 +444,7 @@ tshark -r traffic.pcapng --export-objects http,./exported_http/
 ### Reverse malicious script(reconstruct to binary)
 
 
-The reconstructed binary from `radius.ps1` is a `.NET`payload associated with the [Covenant C2](https://github.com/cobbr/Covenant){: .redirect } framework. Covenant is an open-source .NET-based command and control (C2) platform commonly used for remote access, post-exploitation and red team operations. By decompressing and analyzing the payload, we confirm that the attacker deployed Covenant C2 to maintain remote access and control over the compromised host.
+The reconstructed binary from `radius.ps1` is a `.NET`payload associated with the <a href="https://github.com/cobbr/Covenant" class="redirect">Covenant C2</a> framework. Covenant is an open-source .NET-based command and control (C2) platform commonly used for remote access, post-exploitation and red team operations. By decompressing and analyzing the payload, we confirm that the attacker deployed Covenant C2 to maintain remote access and control over the compromised host.
 
 > Key points:
 - The PowerShell loader (`radius.ps1`) decompresses and loads a `.NET assembly in-memory`.
@@ -493,7 +496,7 @@ b9ae45604a7ae33889d2e6b7f7a3c63e08b80a4f8ed40322d5f4f622aed4f0a9  decompressed_p
 
 After reconstructing the binary, we search for the AES key used for encrypted C2 traffic. This key is often hardcoded or generated during implant setup.
 
-To extract the AES key from the .NET payload, use a decompiler such as [ILSpy](https://github.com/icsharpcode/ILSpy){: .redirect } For `Linux` or [dnSpy](https://github.com/dnSpy/dnSpy){: .redirect } For `Windows)`.
+To extract the AES key from the .NET payload, use a decompiler such as <a href="https://github.com/icsharpcode/ILSpy" class="redirect">ILSpy</a> For `Linux` or <a href="https://github.com/dnSpy/dnSpy" class="redirect">dnSpy</a> For `Windows)`.
 
 Open `decompressed_payload.bin` in one of these programs to inspect the code and locate hardcoded cryptographic keys or configuration values.
 
@@ -509,9 +512,9 @@ So now We have Initial AES key as shown below:
 
 We can manually decrypt C2 traffic using the `AESSetupKey` we have. The AESSetupKey is the initial key used by the Covenant implant to encrypt its `RSA public key` before sending it to the server. This allows the server to securely send back a session key, which is then used for all further encrypted communication.
 
-To decrypt the traffic between the implant and the server, you can use tools like [CyberChef](https://gchq.github.io/CyberChef/){: .redirect } or the specialized [CovenantDecryptor](https://github.com/naacbin/CovenantDecryptor){: .redirect } Python tool. CovenantDecryptor automates the process: you provide the AESSetupKey and the captured traffic, and it extracts and decrypts the messages, revealing the actual commands and data.
+To decrypt the traffic between the implant and the server, you can use tools like <a href="https://gchq.github.io/CyberChef/" class="redirect">CyberChef</a> or the specialized <a href="https://github.com/naacbin/CovenantDecryptor" class="redirect">CovenantDecryptor</a> Python tool. CovenantDecryptor automates the process: you provide the AESSetupKey and the captured traffic, and it extracts and decrypts the messages, revealing the actual commands and data.
 
-<a href="https://github.com/naacbin/CovenantDecryptor" target="_blank" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CovenantDecryptor
+<a href="https://github.com/naacbin/CovenantDecryptor" target="_blank" class=".box-button" class style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CovenantDecryptor
   <img src="https://github.githubassets.com/favicons/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
   <span style="font-size: 16px;"></span>
 </a>
@@ -605,7 +608,7 @@ flag.bin: PNG image data, 1920 x 977, 8-bit/color RGBA, non-interlaced
 
 ### option || 
 
-using [Render Image](https://gchq.github.io/CyberChef/#recipe=Render_Image('Base64')){: .redirect }
+using <a href="https://gchq.github.io/CyberChef/#recipe=Render_Image('Base64')" class="redirect">Render Image</a>
 
 ![](/images/TryHackMe/Event-Horizon/Render-Image.png)
 
@@ -629,7 +632,18 @@ I hope you found this helpful, see you in another writeups.
     white-space: pre-wrap;
 }
 
-/* Mobile-only styles */
+.prompt-info {
+  text-align: center;
+  margin: 15px auto;
+  max-width: 800px;
+  padding: 15px;
+  background-color: #f0f8ff;
+  border-left: 4px solid #007acc;
+  border-radius: 5px;
+}
+
+
+/* Mobile-only responsive styles */
 @media (max-width: 768px) {
   .gif-responsive {
     width: 100% !important;
@@ -643,13 +657,21 @@ I hope you found this helpful, see you in another writeups.
     height: auto !important;
   }
   
-  /* Center box buttons on mobile only */
   .box-button {
-    justify-content: center !important;
+    max-width: 90%;
+    padding: 10px 16px;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .box-button img {
+    width: 28px;
+    height: 28px;
   }
   
   .box-button span {
-    text-align: center !important;
+    font-size: 14px;
+    text-align: center;
   }
 }
 
