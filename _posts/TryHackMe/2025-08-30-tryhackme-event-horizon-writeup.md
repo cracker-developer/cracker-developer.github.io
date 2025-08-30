@@ -612,7 +612,7 @@ using [Render Image](https://gchq.github.io/CyberChef/#recipe=Render_Image('Base
 I hope you found this helpful, see you in another writeups.
 
 <div style="text-align: center;">
-<img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2F3cGw3M2h0NG1xOTRqYnV1bDA2ZmdhZTA4dnE0NjRjNG80dGprZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SV5k9Ulnk9LdgYnjbe/giphy.gif" alt="GIF" style="max-width:2200px; height:400px; border-radius:8px;">
+<img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2F3cGw3M2h0NG1xOTRqYnV1bDA2ZmdhZTA4dnE0NjRjNG80dGprZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SV5k9Ulnk9LdgYnjbe/giphy.gif" alt="GIF" style="max-width:2200px; height:400px; border-radius:8px;" class="gif-responsive">
 </div>
 {: .gif-responsive }
 
