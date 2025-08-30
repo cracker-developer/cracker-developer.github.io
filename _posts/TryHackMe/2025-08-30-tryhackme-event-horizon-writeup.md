@@ -655,6 +655,12 @@ I hope you found this helpful, see you in another writeups.
     justify-content: center !important;  /* Center content horizontally */
   }
 
+  /* Remove all &nbsp; spaces on mobile only */
+  .box-button {
+    text-indent: 0 !important;
+    letter-spacing: 0 !important;
+  }
+  
   .box-button::before {
     content: "" !important; /* Remove all &nbsp; spaces on mobile */
   }
