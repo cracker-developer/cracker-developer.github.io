@@ -9,14 +9,18 @@ image:
   path: /images/TryHackMe/Brains/room_image.webp
 ---
 
-<a href="https://tryhackme.com/r/room/brains" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">TryHackMe | Brains CTF Challenge
-  <img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
-  <span style="font-size: 16px;"></span>
-</a>
-
 🧰 Writeup Overview
 
-we focus on advanced paging, directory obfuscation, and exploiting vulnerabilities within JetBrains TeamCity. You will bypass authentication (CVE-2024-27198) and execute remote code (CVE-2024-27199) by sending crafted HTTP requests. The guide also covers setting up an admin user to execute commands and achieve reverse shell access, and we conclude with guidance on using Splunk to analyze incidents.
+we focus on advanced paging, `directory obfuscation`, and `exploiting vulnerabilities within JetBrains TeamCity`. You will `bypass authentication` *(CVE-2024-27198)* and execute remote code *(CVE-2024-27199)* by sending crafted HTTP requests. The guide also covers setting up an admin user to execute commands and achieve reverse shell access, and we conclude with guidance on `using Splunk` to analyze incidents.
+
+<a href="https://tryhackme.com/r/room/brains"
+target="_blank"
+class="box-button" 
+data-mobile-text="Brains CTF Challenge | TryHackMe"
+style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brains CTF Challenge | TryHackMe
+<img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
+</a>
 
 ## Red: Exploit the Server!
 ## Reconnaissance & Enumeration
@@ -218,16 +222,20 @@ This combo is powerful—auth bypass lets attackers reach an interface, and RCE 
 - ### Manual Exploitation Approach
 
 
-<a href="https://www.rapid7.com/blog/post/2024/03/04/etr-cve-2024-27198-and-cve-2024-27199-jetbrains-teamcity-multiple-authentication-bypass-vulnerabilities-fixed/" style="display: flex; align-items: center; background-color: #a1a1a1ff; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #fff; text-decoration: none;">CVE-2024-27198 and CVE-2024-27199: JetBrains TeamCity Multiple Authentication Bypass Vulnerabilities (FIXED) | Rapid7 Blog
+<a href="https://www.rapid7.com/blog/post/2024/03/04/etr-cve-2024-27198-and-cve-2024-27199-jetbrains-teamcity-multiple-authentication-bypass-vulnerabilities-fixed/" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">CVE-2024-27198 and CVE-2024-27199: JetBrains TeamCity Multiple Authentication Bypass Vulnerabilities (FIXED) | Rapid7 Blog
   <img src="https://www.rapid7.com/includes/img/favicon.ico" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
   <span style="font-size: 16px;"></span>
 </a>
 
 A detailed explanation can be found here:
 
-<a href="https://www.vicarius.io/vsociety/posts/teamcity-auth-bypass-to-rce-cve-2024-27198-and-cve-2024-27199" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">TeamCity Auth bypass to RCE (CVE-2024-27198 and CVE-2024-27199) | vicarius
+<a href="https://www.vicarius.io/vsociety/posts/teamcity-auth-bypass-to-rce-cve-2024-27198-and-cve-2024-27199"
+target="_blank"
+class="box-button" 
+data-mobile-text="TeamCity Auth bypass to RCE (CVE-2024-27198 and CVE-2024-27199) | Vicarius"
+style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TeamCity Auth bypass to RCE (CVE-2024-27198 and CVE-2024-27199) | Vicarius
   <img src="https://www.vicarius.io/vsociety/favicon.svg" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
-  <span style="font-size: 16px;"></span>
 </a>
 
 ```console
@@ -354,40 +362,143 @@ nc -lvnp 4444
 <!-- -->
 Use `Firefox browser` if you have trouble playing the video.
 
-<video width="800" controls>
-  <source src="{{ '/videos/TryHackMe/brains/Automated_Exploitation.mp4' | relative_url }}" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<div class="video-container">
+  <video controls>
+    <source src="{{ '/videos/TryHackMe/brains/Automated_Exploitation.mp4' | relative_url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+{: .video-responsive }
 
 
 ## Blue: Let's Investigate
 
 you can check here about how use Splunk
 
-<a href="https://docs.splunk.com/Documentation/Splunk" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">usage Splunk | Splunk® Enterprise
+<a href="https://docs.splunk.com/Documentation/Splunk"
+target="_blank"
+class="box-button" 
+data-mobile-text="Usage Splunk | Splunk® Enterprise"
+style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Usage Splunk | Splunk® Enterprise
   <img src="https://docs.splunk.com/favicon.ico" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
-  <span style="font-size: 16px;"></span>
 </a>
 
-<video width="800" controls>
-  <source src="{{ '/videos/TryHackMe/brains/Investigate.mp4' | relative_url }}" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<div class="video-container">
+  <video controls>
+    <source src="{{ '/videos/TryHackMe/brains/Investigate.mp4' | relative_url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+{: .video-responsive }
 
-
-<div style="text-align: center;">
-<img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3dzNjZwZ2V3ZDFmZmRiZnNmZXdhc3hnMzFzMm1tYTBreXhiM3RzNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1xucXbDnMIYkU/giphy.gif" alt="GIF" style="max-width:2400px; height:450px; border-radius:8px;">
+<div class="gif-container">
+<img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3dzNjZwZ2V3ZDFmZmRiZnNmZXdhc3hnMzFzMm1tYTBreXhiM3RzNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1xucXbDnMIYkU/giphy.gif" alt="GIF" class="gif-responsive">
 </div>
 
 ---
 
 <style>
 .center img {
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-.wrap pre{
-    white-space: pre-wrap;
+
+.wrap pre {
+  white-space: pre-wrap;
+}
+
+.gif-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.gif-responsive {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gif-responsive:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Additional video styles */
+.video-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.video-responsive {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-responsive:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile-only responsive styles */
+@media (max-width: 768px) {
+  .gif-responsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  .video-responsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  .box-button {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 12px 16px !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    position: relative;
+  }
+  
+  /* Hide desktop text */
+  .box-button {
+    font-size: 0 !important;
+  }
+  
+  /* Show mobile text from data attribute */
+  .box-button::after {
+    content: attr(data-mobile-text) !important;
+    font-size: 14px !important;
+    color: #a1a1a1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+  
+  .box-button img {
+    width: 28px !important;
+    height: 28px !important;
+    margin-right: 0 !important;
+  }
 }
 </style>
+<script>
+// Function to make only .redirect class links open in new tabs, but not work here actually i don'know why 
+document.querySelectorAll('a.redirect').forEach(link => {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+});
+</script>
+

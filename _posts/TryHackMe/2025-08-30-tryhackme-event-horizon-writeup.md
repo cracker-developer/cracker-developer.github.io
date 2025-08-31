@@ -18,10 +18,10 @@ We have a zip file `evidence-1724741326043.zip` that contains the network captur
 <a href="https://tryhackme.com/room/eventhorizonroom"
 target="_blank"
 class="box-button" 
-data-mobile-text="TryHackMe | Horizon CTF Challenge"
+data-mobile-text="Horizon CTF Challenge | TryHackMe"
 style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TryHackMe | Horizon CTF Challenge
-  <img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Horizon CTF Challenge | TryHackMe
+<img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
 </a>
 
 
@@ -157,10 +157,12 @@ To follow a specific `TCP stream`, replace `NumTcpStream` with the actual stream
 
 > Use `Firefox browser` if you have trouble playing the video.
 
-<video width="790" controls>
-  <source src="{{ '/videos/TryHackMe/Event-Horizon/pop.mp4' | relative_url }}" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<div class="video-container">
+  <video controls>
+    <source src="{{ '/videos/TryHackMe/brains/pop.mp4' | relative_url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
 {: .video-responsive }
 
 OR if you want to follow all streams one by one, you can use a loop:
@@ -630,15 +632,23 @@ using <a href="https://gchq.github.io/CyberChef/#recipe=Render_Image('Base64')" 
 
 I hope you found this helpful, see you in another writeups.
 
-<div style="text-align: center;">
-<img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2F3cGw3M2h0NG1xOTRqYnV1bDA2ZmdhZTA4dnE0NjRjNG80dGprZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SV5k9Ulnk9LdgYnjbe/giphy.gif" alt="GIF" style="max-width:2200px; height:400px; border-radius:8px;" class="gif-responsive">
+<div class="gif-container">
+<img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2F3cGw3M2h0NG1xOTRqYnV1bDA2ZmdhZTA4dnE0NjRjNG80dGprZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SV5k9Ulnk9LdgYnjbe/giphy.gif" alt="GIF" class="gif-responsive">
 </div>
-{: .gif-responsive }
 
 ---
 
 <style>
-.center img {
+img {
+  transition: all 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+  filter: brightness(90%);
+}
+
+img:center {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -646,6 +656,47 @@ I hope you found this helpful, see you in another writeups.
 
 .wrap pre {
   white-space: pre-wrap;
+}
+
+.gif-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.gif-responsive {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gif-responsive:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Additional video styles */
+.video-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.video-responsive {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-responsive:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
 /* Mobile-only responsive styles */

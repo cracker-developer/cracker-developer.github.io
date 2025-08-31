@@ -9,14 +9,19 @@ image:
   path: /images/TryHackMe/Cheese/room_image.webp
 ---
 
-<a href="https://tryhackme.com/r/room/brains" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">TryHackMe | Cheese CTF Challenge
-  <img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
-  <span style="font-size: 16px;"></span>
-</a>
-
 🧰 Writeup Overview
 
 we bypassed the login page using an `SQL injection` and discovered an endpoint `vulnerable to LFI`. By `chaining PHP filters`, we turned the LFI into `RCE` and gained an initial foothold on the system. After that, we exploited a `writable authorized_keys file` to pivot to another user. As this new user, we fixed a `syntax error in a timer` and used `sudo privileges` to start it, which allowed us to create a `SUID binary`. Finally, by exploiting this binary, we `escalated privileges to root`.
+
+<a href="https://tryhackme.com/r/room/brains"
+target="_blank"
+class="box-button" 
+data-mobile-text="Cheese CTF Challenge | TryHackMe"
+style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cheese CTF Challenge | TryHackMe
+<img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
+</a>
+
 ## Initial Enumeration
 
 ### rustscan
@@ -61,10 +66,7 @@ Open  10.10.202.162
 Open  10.10.202.162
 etc...
 ```
-Spoofing ports with services or no can be a technique used to enhance security by confusing potential attackers. One popular tool for this is [Portspoof](https://github.com/drk1wi/portspoof).
-Also known as `Emulating Services` or `Camouflage Techniques`
-
-[https://www.darknet.org.uk/2018/04/portspoof-spoof-all-ports-open-emulate-valid-services/](https://www.darknet.org.uk/2018/04/portspoof-spoof-all-ports-open-emulate-valid-services/)
+Spoofing ports with services or no can be a technique used to enhance security by confusing potential attackers also known as `Emulating Services` or `Camouflage Techniques`. One popular tool for this is <a href="https://github.com/drk1wi/portspoof" target="_blank">Portspoof</a>, so this <a href="https://www.darknet.org.uk/2018/04/portspoof-spoof-all-ports-open-emulate-valid-services/" target="_blank">Explain Portspoof</a>
 
 ### trying a common ports & Discovering a website
 
@@ -171,7 +173,7 @@ this will redirect us to `http://10.10.202.162/secret-script.php?file=php://filt
  
 ![](/images/TryHackMe/Cheese/messages2.png)
  
-you can check into [SecLists](https://github.com/danielmiessler/SecLists)
+you can check on <a href="https://github.com/danielmiessler/SecLists" target="_blank">SecLists</a>
    
 ```sh                                                                                                                                                                                                                                  
 ┌──(cracker㉿carcker)-[~/Desktop/THM/Cheese-CTF]
@@ -226,7 +228,7 @@ Then you can explore the rest of the files yourself.
 ```console
 http://10.10.202.162/secret-script.php?file=php://filter/resource=../../../etc/group
 ```
-now check into [here](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/File%20Inclusion/README.md#lfi--rfi-using-wrappers) About searching for a `filter`.
+now check <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/File%20Inclusion/README.md#lfi--rfi-using-wrappers" target="_blank">here</a> About searching for a `filters(wrappers)`.
 
 we will use `Wrapper php://filter` as below:
 ```console
@@ -340,12 +342,12 @@ output :
 ## RCE with PHP Filters Chain
 now will be able to turn the `php://filter` into a `full RCE` in generally Convert LFI to RCE .
 
-> you can check [here](https://www.synacktiv.com/en/publications/php-filters-chain-what-is-it-and-how-to-use-it) how this attack work.
+> you can check <a href="https://www.synacktiv.com/en/publications/php-filters-chain-what-is-it-and-how-to-use-it" target="_blank">here</a> how this attack work.
 {: .prompt-info }
 
-Firstly, generate a payload using the php [`filter chain generator.py`](https://github.com/synacktiv/php_filter_chain_generator).
+Firstly, generate a payload using the php <a href="https://github.com/synacktiv/php_filter_chain_generator" target="_blank">filter chain generator.py</a>.
 
-> Another script you can generate your backdoor with [`https://gist.github.com/loknop/b27422d355ea1fd0d90d6dbc1e278d4d`](https://gist.github.com/loknop/b27422d355ea1fd0d90d6dbc1e278d4d)
+> Another script you can generate your backdoor check <a href="https://gist.github.com/loknop/b27422d355ea1fd0d90d6dbc1e278d4d" target="_blank">here</a>
 {: .prompt-tip }
 
 ```console
@@ -417,9 +419,13 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data)
 ## Shell as comte
 we can using linpeas simply
 
-<a href="https://linpeas.sh/" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">linpeas
+<a href="https://linpeas.sh/"
+target="_blank"
+class="box-button" 
+data-mobile-text="Linpeas"
+style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Linpeas
   <img src="/images/TryHackMe/linpeas.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
-  <span style="font-size: 16px;"></span>
 </a>
 
 when checking for `files writable` we will see as below.
@@ -505,8 +511,8 @@ THM{9f2ce3df1beeecaf
 ## Shell as root
 We can read the root flag directly if you want to remain just a script kiddie, not a professional hacker.
 
-<div style="text-align: center;">
-<img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnFocmR0OGNuY3QzNHM3M2xtbDN6c2xzdW0zOTA0djRzMnFqYWwyOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/r1wGrCEZ4zTeU/giphy.gif" alt="GIF" style="max-width:2400px; height:450px; border-radius:8px;">
+<div class="gif-container">
+<img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnFocmR0OGNuY3QzNHM3M2xtbDN6c2xzdW0zOTA0djRzMnFqYWwyOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/r1wGrCEZ4zTeU/giphy.gif" alt="GIF" class="gif-responsive">
 </div>
 
 
@@ -637,7 +643,7 @@ drwxr-xr-x 19 root root  4096 Sep 27  2023 ..
 -rwsr-sr-x  1 root root 18712 Oct  1 15:47 xxd
 ```
 
-Checking into [GTFObins](https://gtfobins.github.io/gtfobins/xxd/) for the `xxd` binary, we see that it can be used for `writing to files`.
+Checking into <a href="https://gtfobins.github.io/gtfobins/xxd/" target="_blank">XXD | GTFObins</a> for the `xxd` binary, we see that it can be used for `writing to files`.
 
 ____________________________________________________________________________________
 
@@ -769,7 +775,7 @@ uid=0(root) gid=0(root) groups=0(root)
 #### **option ||| using unshadow**
 I tried that, but somehow it failed.
 
-You can check [here](https://www.hackingarticles.in/linux-for-pentester-xxd-privilege-escalation/#:~:text=In%20this%20article,%20we%20are%20going%20to%20make%20our%20readers) for a deeper understanding.
+You can check <a href="https://www.hackingarticles.in/linux-for-pentester-xxd-privilege-escalation/#:~:text=In%20this%20article,%20we%20are%20going%20to%20make%20our%20readers" target="_blank">here</a> for a deeper understanding.
 
 The `unshadow` function combines the information from the `/etc/passwd` and `/etc/shadow` files, which is essential for cracking password hashes using tools like `John the Ripper`.
 
@@ -900,11 +906,104 @@ Press 'q' or Ctrl-C to abort, almost any other key for status
 
 <style>
 .center img {
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-.wrap pre{
-    white-space: pre-wrap;
+
+.wrap pre {
+  white-space: pre-wrap;
+}
+
+.gif-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.gif-responsive {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gif-responsive:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Additional video styles */
+.video-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.video-responsive {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-responsive:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile-only responsive styles */
+@media (max-width: 768px) {
+  .gif-responsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  .video-responsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  .box-button {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 12px 16px !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    position: relative;
+  }
+  
+  /* Hide desktop text */
+  .box-button {
+    font-size: 0 !important;
+  }
+  
+  /* Show mobile text from data attribute */
+  .box-button::after {
+    content: attr(data-mobile-text) !important;
+    font-size: 14px !important;
+    color: #a1a1a1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+  
+  .box-button img {
+    width: 28px !important;
+    height: 28px !important;
+    margin-right: 0 !important;
+  }
 }
 </style>
+<script>
+// Function to make only .redirect class links open in new tabs, but not work here actually i don'know why 
+document.querySelectorAll('a.redirect').forEach(link => {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+});
+</script>

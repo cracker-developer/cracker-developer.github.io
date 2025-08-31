@@ -9,11 +9,6 @@ image:
   path: /images/TryHackMe/Lookup/room_image.webp
 ---
 
-<a href="https://tryhackme.com/room/lookup" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">TryHackMe | Lookup CTF Challenge
-  <img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
-  <span style="font-size: 16px;"></span>
-</a>
-
 🧰 Writeup Overview
 
 is a `Linux-based machine` that focuses on:
@@ -25,6 +20,15 @@ is a `Linux-based machine` that focuses on:
 - Root access using a `leaked private key` extracted with the `look GTFOBin`
 
 The box challenges your skills in `enumeration`, `web exploitation`, `password attacks`, and `local privilege escalation`, and is ideal for learning real-world exploitation techniques.
+
+<a href="https://tryhackme.com/room/lookup"
+target="_blank"
+class="box-button" 
+data-mobile-text="Lookup CTF Challenge | TryHackMe"
+style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lookup CTF Challenge | TryHackMe
+<img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
+</a>
 
 ## 🧾 Recon(Lookup)
 Edit `/etc/hosts`
@@ -460,11 +464,16 @@ Output:
 ```sh
 (ALL) /usr/bin/look
 ```
-you can check here
 
-<a href="https://gtfobins.github.io/gtfobins/look/" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">GTFOBins | look
+**you can check into below :**
+
+<a href="https://gtfobins.github.io/gtfobins/look/"
+target="_blank"
+class="box-button" 
+data-mobile-text="LOOK | GTFOBins"
+style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LOOK | GTFOBins
   <img src="/images/TryHackMe/gtfobins.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
-  <span style="font-size: 16px;"></span>
 </a>
 
 ```sh
@@ -490,19 +499,112 @@ Capture the Flag
 cat root.txt
 ```
 
-<div style="text-align: center;">
-  <img src="/gifs/labubu.gif" alt="GIF" style="max-width:2400px; height:450px; border-radius:8px;">
+<div class="gif-container">
+<img src="/gifs/labubu.gif" alt="GIF" class="gif-responsive">
 </div>
 
 ---
 
 <style>
 .center img {
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-.wrap pre{
-    white-space: pre-wrap;
+
+.wrap pre {
+  white-space: pre-wrap;
+}
+
+.gif-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.gif-responsive {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gif-responsive:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Additional video styles */
+.video-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.video-responsive {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-responsive:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile-only responsive styles */
+@media (max-width: 768px) {
+  .gif-responsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  .video-responsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  .box-button {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 12px 16px !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    position: relative;
+  }
+  
+  /* Hide desktop text */
+  .box-button {
+    font-size: 0 !important;
+  }
+  
+  /* Show mobile text from data attribute */
+  .box-button::after {
+    content: attr(data-mobile-text) !important;
+    font-size: 14px !important;
+    color: #a1a1a1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+  
+  .box-button img {
+    width: 28px !important;
+    height: 28px !important;
+    margin-right: 0 !important;
+  }
 }
 </style>
+<script>
+// Function to make only .redirect class links open in new tabs, but not work here actually i don'know why 
+document.querySelectorAll('a.redirect').forEach(link => {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+});
+</script>

@@ -9,14 +9,18 @@ image:
   path: /images/TryHackMe/Soupedecode01/room_image.webp
 ---
 
-<a href="https://tryhackme.com/room/soupedecode01" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">            TryHackMe | Soupedecode 01 CTF Challenge
-  <img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
-  <span style="font-size: 16px;"></span>
-</a>
-
 🧰 Writeup Overview
 
 This writeup details the step-by-step exploitation of an Active Directory(`AD`) environment vulnerable to `Kerberos attacks`, with a focus on `AS-REP Roasting`. It covers the initial reconnaissance identifying open `AD`-related services like `Kerberos`, `LDAP`, and `SMB`. Using these, the attacker extracts encrypted ticket hashes from service accounts without pre-authentication, then cracks them offline to reveal passwords. Finally, the writeup demonstrates post-exploitation techniques including `SMB` access and lateral movement, highlighting common weaknesses in `AD` setups and how to detect and exploit them.
+
+<a href="https://tryhackme.com/room/soupedecode01"
+target="_blank"
+class="box-button" 
+data-mobile-text="Soupedecode CTF Challenge | TryHackMe"
+style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soupedecode CTF Challenge | TryHackMe
+<img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
+</a>
 
 ## Reconnaissance
 
@@ -84,7 +88,7 @@ Since we are dealing with a Domain Controller, let's add **hostname** `DC01.SOUP
 Let's see if we can list the shares using null authentication
 
 #### option |
-Using [enum4linux](https://www.kali.org/tools/enum4linux/)
+Using <a href="https://www.kali.org/tools/enum4linux/" target="_blank">enum4linux</a>
 
 ```sh
 enum4linux -U -S SOUPEDECODE.LOCAL
@@ -94,7 +98,7 @@ enum4linux -U -S SOUPEDECODE.LOCAL
 ---
 
 #### option ||
-Using [nxc](https://linuxcommandlibrary.com/man/nxc)( [netexec](https://www.netexec.wiki/) )
+Using <a href="https://linuxcommandlibrary.com/man/nxc" target="_blank">nxc</a>(<a href="https://www.netexec.wiki/" target="_blank"> netexec </a>)
 
 ```sh
 nxc smb DC01.SOUPEDECODE.LOCAL -u '' -p '' --shares
@@ -110,7 +114,7 @@ SMB         10.10.150.50    445    DC01             [-] Error enumerating shares
 Let's list the shares using `guest` authentication without password
 
 #### option |
-Using [smbclient](https://tools.thehacker.recipes/impacket/examples/smbclient.py) But this option doesn't show permissions
+Using <a href="https://tools.thehacker.recipes/impacket/examples/smbclient.py" target="_blank">smbclient</a> But this option doesn't show permissions
 ```sh
 smbclient -L //SOUPEDECODE.LOCAL -U guest
 ```
@@ -204,7 +208,7 @@ nxc smb DC01.SOUPEDECODE.LOCAL -u 'guest' -p '' --rid-brute 2500 | cut -d '\' -f
 
 ### Password Spraying
 
-Using [ASREPRosting](https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/asreproast.html) and spraying the common password yielded no results.
+Using <a href="https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/asreproast.html" target="_blank">ASREPRosting</a> and spraying the common password yielded no results.
 Spraying "username=password" succeeded, revealing valid credentials for user `ybob317`
 
 #### option | nxc
@@ -264,9 +268,9 @@ impacket-smbclient 'SOUPEDECODE.LOCAL/ybob317:ybob317@SOUPEDECODE.LOCAL'
 
 ## Root Flag
 
-### [Kerberoasting](https://www.crowdstrike.com/en-us/cybersecurity-101/cyberattacks/kerberoasting/)
+### <a href="https://www.crowdstrike.com/en-us/cybersecurity-101/cyberattacks/kerberoasting/" target="_blank">Kerberoasting</a>
 
-You can check here About [Cracking Kerberos TGS Tickets](https://adsecurity.org/?p=2293) & [SPN](https://learn.microsoft.com/en-us/windows/win32/ad/service-principal-names) & [Kerberos Authentication](https://www.vaadata.com/blog/what-is-kerberos-kerberos-authentication-explained/)
+You can check here About <a href="https://adsecurity.org/?p=2293" target="_blank">Cracking Kerberos TGS Tickets</a> & <a href="https://learn.microsoft.com/en-us/windows/win32/ad/service-principal-names" target="_blank">SPN</a> & <a href="https://www.vaadata.com/blog/what-is-kerberos-kerberos-authentication-explained/" target="_blank">Kerberos Authentication</a>
 
 Since we have a valid domain credentials, we check for `Kerberoastable` accounts using `GetUserSPNs`
 
@@ -438,19 +442,112 @@ impacket-smbclient -hashes :e41da7e79a4c76dbd9cf79d1cb325559 'SOUPEDECODE.LOCAL/
 
 ![](/images/TryHackMe/Soupedecode01/root-smb.png)
 
-<div style="text-align: center;">
-<img src="/gifs/crazy.gif" alt="GIF" style="max-width:2400px; height:450px; border-radius:8px;">
+<div class="gif-container">
+<img src="/gifs/crazy.gif" alt="GIF" class="gif-responsive">
 </div>
 
 ---
 
 <style>
 .center img {
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-.wrap pre{
-    white-space: pre-wrap;
+
+.wrap pre {
+  white-space: pre-wrap;
+}
+
+.gif-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.gif-responsive {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gif-responsive:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Additional video styles */
+.video-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.video-responsive {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-responsive:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile-only responsive styles */
+@media (max-width: 768px) {
+  .gif-responsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  .video-responsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  .box-button {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 12px 16px !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    position: relative;
+  }
+  
+  /* Hide desktop text */
+  .box-button {
+    font-size: 0 !important;
+  }
+  
+  /* Show mobile text from data attribute */
+  .box-button::after {
+    content: attr(data-mobile-text) !important;
+    font-size: 14px !important;
+    color: #a1a1a1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+  
+  .box-button img {
+    width: 28px !important;
+    height: 28px !important;
+    margin-right: 0 !important;
+  }
 }
 </style>
+<script>
+// Function to make only .redirect class links open in new tabs, but not work here actually i don'know why 
+document.querySelectorAll('a.redirect').forEach(link => {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+});
+</script>

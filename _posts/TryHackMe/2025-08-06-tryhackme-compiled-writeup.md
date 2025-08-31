@@ -9,14 +9,18 @@ image:
   path: /images/TryHackMe/Compiled/room_image.webp
 ---
 
-<a href="https://tryhackme.com/room/compiled" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">TryHackMe | Compiled CTF Challenge
-  <img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
-  <span style="font-size: 16px;"></span>
-</a>
-
 🧰 Writeup Overview
 
 This writeup explains the reverse-engineering of the provided ELF binary `Compiled.Compiled`, culminating in finding the correct input that triggers the message **Correct!**.
+
+<a href="https://tryhackme.com/room/compiled"
+target="_blank"
+class="box-button" 
+data-mobile-text="Compiled CTF Challenge | TryHackMe"
+style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Compiled CTF Challenge | TryHackMe
+<img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
+</a>
 
 ## Initial Enumeration
 
@@ -132,7 +136,7 @@ undefined8 main(void)
 
 `fwrite("Password: ", 1, 10, stdout);`
 - Displays the prompt: `Password:`
-- Equivalent to `printf("Password: ");` but done using [fwrite()](https://www.tutorialspoint.com/c_standard_library/c_function_fwrite.htm) here.
+- Equivalent to `printf("Password: ");` but done using <a href="https://www.tutorialspoint.com/c_standard_library/c_function_fwrite.htm" target="_blank">fwrite()</a> in this case.
 
 ---
 
@@ -168,7 +172,7 @@ Behavior:
 
 `strcmp(local_28, "__dso_handle")`
 - Compares user input against `"__dso_handle"`.
-- If equal, [strcmp()](https://www.programiz.com/c-programming/library-function/string.h/strcmp) returns `0`.
+- If equal, <a href="https://www.programiz.com/c-programming/library-function/string.h/strcmp" target="_blank">strcmp()</a> returns `0`.
 
 Then we enter this condition:
 
@@ -295,11 +299,104 @@ Correct!+++ exited (status 0) +++
 
 <style>
 .center img {
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-.wrap pre{
-    white-space: pre-wrap;
+
+.wrap pre {
+  white-space: pre-wrap;
+}
+
+.gif-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.gif-responsive {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gif-responsive:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Additional video styles */
+.video-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.video-responsive {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-responsive:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile-only responsive styles */
+@media (max-width: 768px) {
+  .gif-responsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  .video-responsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  .box-button {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 12px 16px !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    position: relative;
+  }
+  
+  /* Hide desktop text */
+  .box-button {
+    font-size: 0 !important;
+  }
+  
+  /* Show mobile text from data attribute */
+  .box-button::after {
+    content: attr(data-mobile-text) !important;
+    font-size: 14px !important;
+    color: #a1a1a1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+  
+  .box-button img {
+    width: 28px !important;
+    height: 28px !important;
+    margin-right: 0 !important;
+  }
 }
 </style>
+<script>
+// Function to make only .redirect class links open in new tabs, but not work here actually i don'know why 
+document.querySelectorAll('a.redirect').forEach(link => {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+});
+</script>
