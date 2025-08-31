@@ -399,7 +399,17 @@ style="display: flex; align-items: center; background-color: #333; padding: 10px
 ---
 
 <style>
-.center img {
+img {
+  transition: all 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+  filter: brightness(90%);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0);
+}
+
+img:center {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -420,7 +430,7 @@ style="display: flex; align-items: center; background-color: #333; padding: 10px
     height: 450px;
     border-radius: 12px;
     object-fit: cover;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -431,23 +441,23 @@ style="display: flex; align-items: center; background-color: #333; padding: 10px
 
 /* Additional video styles */
 .video-container {
-    text-align: center;
-    margin: 30px 0;
+  text-align: center;
+  margin: 30px auto;        /* centers inside post */
+  max-width: 800px;         /* keeps container from being huge */
 }
 
 .video-responsive {
-    width: 100%;
-    max-width: 800px;
-    height: 450px;
-    border-radius: 12px;
-    object-fit: cover;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;              /* fill container */
+  aspect-ratio: 16 / 9;    /* keeps correct proportions on desktop */
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0.1, 0.1, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .video-responsive:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  transform: scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
 /* Mobile-only responsive styles */
@@ -461,6 +471,7 @@ style="display: flex; align-items: center; background-color: #333; padding: 10px
   .video-responsive {
     width: 100% !important;
     max-width: 100% !important;
+    aspect-ratio: auto;  /* let phone use natural aspect ratio */
     height: auto !important;
   }
   
