@@ -159,7 +159,7 @@ To follow a specific `TCP stream`, replace `NumTcpStream` with the actual stream
 
 <div class="video-container">
   <video controls>
-    <source src="{{ '/videos/TryHackMe/brains/pop.mp4' | relative_url }}" type="video/mp4">
+    <source src="{{ '/videos/TryHackMe/Event-Horizon/pop.mp4' | relative_url }}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
@@ -420,10 +420,13 @@ Now we can locate file uploaded `radius.ps1` via `http` traffic
 
 ![](/images/TryHackMe/Event-Horizon/redius-ps1.png)
 
-<video width="795" controls>
-  <source src="{{ '/videos/TryHackMe/Event-Horizon/GET.mp4' | relative_url }}" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+
+<div class="video-container">
+  <video controls>
+    <source src="{{ '/videos/TryHackMe/Event-Horizon/GET.mp4' | relative_url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
 {: .video-responsive }
 
 #### Method || Using Tshark
