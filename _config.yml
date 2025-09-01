@@ -196,6 +196,10 @@ defaults:
 sass:
   style: compressed
 
+assets:
+  css:
+    - /assets/css/custom.scss
+
 compress_html:
   clippings: all
   comments: all
