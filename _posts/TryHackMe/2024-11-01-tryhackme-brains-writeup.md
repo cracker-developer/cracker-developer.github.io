@@ -363,7 +363,7 @@ nc -lvnp 4444
 Use `Firefox browser` if you have trouble playing the video.
 
 <div class="video-container">
-  <video controls>
+  <video controls class="video-responsive">
     <source src="{{ '/videos/TryHackMe/brains/Automated_Exploitation.mp4' | relative_url }}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -385,7 +385,7 @@ style="display: flex; align-items: center; background-color: #333; padding: 10px
 </a>
 
 <div class="video-container">
-  <video controls>
+  <video controls class="video-responsive">
     <source src="{{ '/videos/TryHackMe/brains/Investigate.mp4' | relative_url }}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
