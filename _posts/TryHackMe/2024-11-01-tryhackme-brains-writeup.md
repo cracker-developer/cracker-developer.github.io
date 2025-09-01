@@ -1,7 +1,6 @@
 ---
 title: 'TryHackMe: Brains CTF Walkthrough'
 author: 0xcracker
-styles: /assets/css/custom.scss
 categories: [TryHackMe]
 tags: [web-application, rustscan, dirsearch, sed, curl, authentication-bypass, RCE, splunk]
 render_with_liquid: true
