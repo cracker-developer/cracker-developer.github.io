@@ -227,14 +227,14 @@ This combo is powerful—auth bypass lets attackers reach an interface, and RCE 
   <span style="font-size: 16px;"></span>
 </a>
 
-A detailed explanation can be found here:
+A detailed explanation of `CVE-2024-27198` and `CVE-2024-27199` can be found here:
 
 <a href="https://www.vicarius.io/vsociety/posts/teamcity-auth-bypass-to-rce-cve-2024-27198-and-cve-2024-27199"
 target="_blank"
 class="box-button" 
-data-mobile-text="TeamCity Auth bypass to RCE (CVE-2024-27198 and CVE-2024-27199) | Vicarius"
+data-mobile-text="TeamCity Auth bypass to RCE | Vicarius"
 style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
-TeamCity Auth bypass to RCE (CVE-2024-27198 and CVE-2024-27199) | Vicarius
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TeamCity Auth bypass to RCE | Vicarius
   <img src="https://www.vicarius.io/vsociety/favicon.svg" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
 </a>
 
