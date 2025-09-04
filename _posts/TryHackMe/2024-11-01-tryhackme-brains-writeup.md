@@ -453,6 +453,19 @@ img:center {
 
 /* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
+    .gif-responsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .video-responsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    aspect-ratio: auto;  /* let phone use natural aspect ratio */
+    height: auto !important;
+  }
+  
   .box-button {
     max-width: 100% !important;
     width: 100% !important;
