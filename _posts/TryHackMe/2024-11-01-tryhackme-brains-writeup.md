@@ -13,13 +13,9 @@ image:
 
 we focus on advanced paging, `directory obfuscation`, and `exploiting vulnerabilities within JetBrains TeamCity`. You will `bypass authentication` *(CVE-2024-27198)* and execute remote code *(CVE-2024-27199)* by sending crafted HTTP requests. The guide also covers setting up an admin user to execute commands and achieve reverse shell access, and we conclude with guidance on `using Splunk` to analyze incidents.
 
-<a href="https://tryhackme.com/r/room/brains"
-target="_blank"
-class="box-button" 
-data-mobile-text="Brains CTF Challenge | TryHackMe"
-style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brains CTF Challenge | TryHackMe
-<img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
+<a href="https://tryhackme.com/r/room/brains" target="_blank" class="box-button" data-mobile-text="Brains CTF Challenge | TryHackMe" style="display: flex; width: 100%; max-width: 1000px; align-items: center; justify-content: center; background: linear-gradient(135deg, #2a0e0e 0%, #1a0505 100%); padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); color: #ff4444; text-decoration: none; font-family: Arial, sans-serif; font-weight: bold; border: 1px solid #ff5555; margin: 10px auto; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 0 25px rgba(255, 0, 0, 0.7)'; this.style.color='#ffffff';" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 15px rgba(255, 0, 0, 0.3)'; this.style.color='#ff4444';">
+<span>Brains CTF Challenge | TryHackMe</span>
+<img src="https://tryhackme.com/r/favicon.png" alt="Icon" style="width: 48px; height: 48px; margin-right: 10px; filter: hue-rotate(300deg) brightness(0.9); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'; this.style.filter='hue-rotate(320deg) brightness(1.3)';" onmouseout="this.style.transform='scale(1)'; this.style.filter='hue-rotate(300deg) brightness(0.9)';">
 </a>
 
 ## Red: Exploit the Server!
@@ -219,23 +215,18 @@ The vulnerabilities CVE-2024-27198 and CVE-2024-27199 target `JetBrains TeamCity
 
 This combo is powerful—auth bypass lets attackers reach an interface, and RCE takes it further to control the server.
 
-- ### Manual Exploitation Approach
+### Manual Exploitation Approach
 
-
-<a href="https://www.rapid7.com/blog/post/2024/03/04/etr-cve-2024-27198-and-cve-2024-27199-jetbrains-teamcity-multiple-authentication-bypass-vulnerabilities-fixed/" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">CVE-2024-27198 and CVE-2024-27199: JetBrains TeamCity Multiple Authentication Bypass Vulnerabilities (FIXED) | Rapid7 Blog
-  <img src="https://www.rapid7.com/includes/img/favicon.ico" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
-  <span style="font-size: 16px;"></span>
+<a href="https://www.rapid7.com/blog/post/2024/03/04/etr-cve-2024-27198-and-cve-2024-27199-jetbrains-teamcity-multiple-authentication-bypass-vulnerabilities-fixed/" target="_blank" class="box-button" data-mobile-text="CVE-2024-27198 and CVE-2024-27199: JetBrains TeamCity Multiple Authentication Bypass Vulnerabilities (FIXED) | Rapid7 Blog" style="display: flex; width: 100%; max-width: 1000px; align-items: center; justify-content: center; background: linear-gradient(135deg, #2a2a2a 100%, #2a2a2a 100%); padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); color: #a1a1a1; text-decoration: none; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 600; border: 2px solid #404040; margin: 10px auto; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 0 20px rgba(255, 255, 255, 0.3)'; this.style.borderColor='#666';" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.4)'; this.style.borderColor='#404040';">
+<span>CVE-2024-27198 and CVE-2024-27199: JetBrains TeamCity Multiple Authentication Bypass Vulnerabilities (FIXED) | Rapid7 Blog</span>
+<img src="https://www.rapid7.com/includes/img/favicon.ico" alt="Icon" style="width: 48px; height: 48px; margin-right: 10px; transition: all 0.3s ease; filter: brightness(0.8);" onmouseover="this.style.transform='scale(1.1)'; this.style.filter='brightness(1.2)';" onmouseout="this.style.transform='scale(1)'; this.style.filter='brightness(0.8)';">
 </a>
 
 A detailed explanation of `CVE-2024-27198` and `CVE-2024-27199` can be found here:
 
-<a href="https://www.vicarius.io/vsociety/posts/teamcity-auth-bypass-to-rce-cve-2024-27198-and-cve-2024-27199"
-target="_blank"
-class="box-button" 
-data-mobile-text="TeamCity Auth bypass to RCE | Vicarius"
-style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TeamCity Auth bypass to RCE | Vicarius
-  <img src="https://www.vicarius.io/vsociety/favicon.svg" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
+<a href="https://www.vicarius.io/vsociety/posts/teamcity-auth-bypass-to-rce-cve-2024-27198-and-cve-2024-27199" target="_blank" class="box-button" data-mobile-text="TeamCity Auth bypass to RCE | Vicarius" style="display: flex; width: 100%; max-width: 1000px; align-items: center; justify-content: center; background: linear-gradient(135deg, #2a2a2a 100%, #2a2a2a 100%); padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); color: #a1a1a1; text-decoration: none; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 600; border: 2px solid #404040; margin: 10px auto; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 0 20px rgba(255, 255, 255, 0.3)'; this.style.borderColor='#666';" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.4)'; this.style.borderColor='#404040';">
+<span>TeamCity Auth bypass to RCE | Vicarius</span>
+<img src="https://www.vicarius.io/vsociety/favicon.svg" alt="Icon" style="width: 48px; height: 48px; margin-right: 10px; transition: all 0.3s ease; filter: brightness(0.8);" onmouseover="this.style.transform='scale(1.1)'; this.style.filter='brightness(1.2)';" onmouseout="this.style.transform='scale(1)'; this.style.filter='brightness(0.8)';">
 </a>
 
 ```console
@@ -352,11 +343,11 @@ nc -lvnp 4444
 
 - We should get a shell in terminal.
 
-- ### Automated Exploitation Approach
+### Automated Exploitation Approach
 
-<a href="https://github.com/W01fh4cker/CVE-2024-27198-RCE" style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">CVE-2024-27198 & CVE-2024-27199 Authentication Bypass --> RCE in JetBrains TeamCity Pre-2023.11.4 | github
-  <img src="https://github.githubassets.com/favicons/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
-  <span style="font-size: 16px;"></span>
+<a href="https://github.com/W01fh4cker/CVE-2024-27198-RCE" target="_blank" class="box-button" data-mobile-text="CVE-2024-27198 & CVE-2024-27199 Authentication Bypass --> RCE in JetBrains TeamCity Pre-2023.11.4 | github" style="display: flex; width: 100%; max-width: 1000px; align-items: center; justify-content: center; background: linear-gradient(135deg, #2a2a2a 100%, #2a2a2a 100%); padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); color: #a1a1a1; text-decoration: none; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 600; border: 2px solid #404040; margin: 10px auto; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 0 20px rgba(255, 255, 255, 0.3)'; this.style.borderColor='#666';" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.4)'; this.style.borderColor='#404040';">
+<span>CVE-2024-27198 & CVE-2024-27199 Authentication Bypass --> RCE in JetBrains TeamCity Pre-2023.11.4 | github</span>
+<img src="https://github.githubassets.com/favicons/favicon.png" alt="Icon" style="width: 48px; height: 48px; margin-right: 10px; transition: all 0.3s ease; filter: brightness(0.8);" onmouseover="this.style.transform='scale(1.1)'; this.style.filter='brightness(1.2)';" onmouseout="this.style.transform='scale(1)'; this.style.filter='brightness(0.8)';">
 </a>
 
 <!-- -->
@@ -375,13 +366,9 @@ Use `Firefox browser` if you have trouble playing the video.
 
 you can check here about how use Splunk
 
-<a href="https://docs.splunk.com/Documentation/Splunk"
-target="_blank"
-class="box-button" 
-data-mobile-text="Usage Splunk | Splunk® Enterprise"
-style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Usage Splunk | Splunk® Enterprise
-  <img src="https://docs.splunk.com/favicon.ico" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
+<a href="https://docs.splunk.com/Documentation/Splunk" target="_blank" class="box-button" data-mobile-text="Usage Splunk | Splunk® Enterprise" style="display: flex; width: 100%; max-width: 1000px; align-items: center; justify-content: center; background: linear-gradient(135deg, #2a2a2a 100%, #2a2a2a 100%); padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); color: #a1a1a1; text-decoration: none; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 600; border: 2px solid #404040; margin: 10px auto; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 0 20px rgba(255, 255, 255, 0.3)'; this.style.borderColor='#666';" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.4)'; this.style.borderColor='#404040';">
+<span>Usage Splunk | Splunk® Enterprise</span>
+<img src="https://docs.splunk.com/favicon.ico" alt="Icon" style="width: 48px; height: 48px; margin-right: 10px; transition: all 0.3s ease; filter: brightness(0.8);" onmouseover="this.style.transform='scale(1.1)'; this.style.filter='brightness(1.2)';" onmouseout="this.style.transform='scale(1)'; this.style.filter='brightness(0.8)';">
 </a>
 
 <div class="video-container">
@@ -460,48 +447,45 @@ img:center {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-/* Mobile-only responsive styles */
-@media (max-width: 768px) {
-  .gif-responsive {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  .video-responsive {
-    width: 100% !important;
-    max-width: 100% !important;
-    aspect-ratio: auto;  /* let phone use natural aspect ratio */
-    height: auto !important;
-  }
-
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
   .box-button {
     max-width: 100% !important;
     width: 100% !important;
     padding: 12px 16px !important;
     justify-content: center !important;
-    gap: 10px !important;
-    position: relative;
+    gap: 8px !important;
   }
-
-  /* Hide desktop text */
-  .box-button {
-    font-size: 0 !important;
+  /* Hide desktop text on mobile */
+  .box-button span {
+    display: none !important;
   }
 
   /* Show mobile text from data attribute */
   .box-button::after {
     content: attr(data-mobile-text) !important;
     font-size: 14px !important;
-    color: #a1a1a1 !important;
+    color: #ffffff !important;
     text-align: center !important;
     white-space: nowrap !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-weight: 600 !important;
   }
 
   .box-button img {
     width: 28px !important;
     height: 28px !important;
     margin-right: 0 !important;
+  }
+}
+/* Desktop Styles */
+@media screen and (min-width: 769px) {
+  .box-button::after {
+    display: none !important;
+  }
+  
+  .box-button span {
+    display: inline !important;
   }
 }
 </style>

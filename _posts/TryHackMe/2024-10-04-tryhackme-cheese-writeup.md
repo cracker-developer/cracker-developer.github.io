@@ -13,13 +13,9 @@ image:
 
 we bypassed the login page using an `SQL injection` and discovered an endpoint `vulnerable to LFI`. By `chaining PHP filters`, we turned the LFI into `RCE` and gained an initial foothold on the system. After that, we exploited a `writable authorized_keys file` to pivot to another user. As this new user, we fixed a `syntax error in a timer` and used `sudo privileges` to start it, which allowed us to create a `SUID binary`. Finally, by exploiting this binary, we `escalated privileges to root`.
 
-<a href="https://tryhackme.com/r/room/brains"
-target="_blank"
-class="box-button" 
-data-mobile-text="Cheese CTF Challenge | TryHackMe"
-style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cheese CTF Challenge | TryHackMe
-<img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
+<a href="https://tryhackme.com/room/cheesectfv10" target="_blank" class="box-button" data-mobile-text="Cheese CTF Challenge | TryHackMe" style="display: flex; width: 100%; max-width: 1000px; align-items: center; justify-content: center; background: linear-gradient(135deg, #2a0e0e 0%, #1a0505 100%); padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); color: #ff4444; text-decoration: none; font-family: Arial, sans-serif; font-weight: bold; border: 1px solid #ff5555; margin: 10px auto; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 0 25px rgba(255, 0, 0, 0.7)'; this.style.color='#ffffff';" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 15px rgba(255, 0, 0, 0.3)'; this.style.color='#ff4444';">
+<span>Cheese CTF Challenge | TryHackMe</span>
+<img src="https://tryhackme.com/r/favicon.png" alt="Icon" style="width: 48px; height: 48px; margin-right: 10px; filter: hue-rotate(300deg) brightness(0.9); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'; this.style.filter='hue-rotate(320deg) brightness(1.3)';" onmouseout="this.style.transform='scale(1)'; this.style.filter='hue-rotate(300deg) brightness(0.9)';">
 </a>
 
 ## Initial Enumeration
@@ -419,13 +415,9 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data)
 ## Shell as comte
 we can using linpeas simply
 
-<a href="https://linpeas.sh/"
-target="_blank"
-class="box-button" 
-data-mobile-text="Linpeas"
-style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Linpeas
-  <img src="/images/TryHackMe/linpeas.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
+<a href="https://linpeas.sh/" target="_blank" class="box-button" data-mobile-text="Linpeas" style="display: flex; width: 100%; max-width: 1000px; align-items: center; justify-content: center; background-color: #0d1b1e; padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 255, 127, 0.2); color: #00ff88; text-decoration: none; font-family: 'Monaco', monospace; font-weight: bold; border: 1px solid #00ff88; margin: 10px auto; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 0 20px rgba(0, 255, 127, 0.6)'; this.style.color='#ffffff';" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 15px rgba(0, 255, 127, 0.2)'; this.style.color='#00ff88';">
+<span>Linpeas</span>
+<img src="/images/TryHackMe/linpeas.png" alt="Icon" style="width: 48px; height: 48px; margin-right: 10px; filter: hue-rotate(120deg) brightness(0.9); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'; this.style.filter='hue-rotate(140deg) brightness(1.3)';" onmouseout="this.style.transform='scale(1)'; this.style.filter='hue-rotate(120deg) brightness(0.9)';">
 </a>
 
 when checking for `files writable` we will see as below.
@@ -966,48 +958,45 @@ img:center {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-/* Mobile-only responsive styles */
-@media (max-width: 768px) {
-  .gif-responsive {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  .video-responsive {
-    width: 100% !important;
-    max-width: 100% !important;
-    aspect-ratio: auto;  /* let phone use natural aspect ratio */
-    height: auto !important;
-  }
-
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
   .box-button {
     max-width: 100% !important;
     width: 100% !important;
     padding: 12px 16px !important;
     justify-content: center !important;
-    gap: 10px !important;
-    position: relative;
+    gap: 8px !important;
   }
-
-  /* Hide desktop text */
-  .box-button {
-    font-size: 0 !important;
+  /* Hide desktop text on mobile */
+  .box-button span {
+    display: none !important;
   }
 
   /* Show mobile text from data attribute */
   .box-button::after {
     content: attr(data-mobile-text) !important;
     font-size: 14px !important;
-    color: #a1a1a1 !important;
+    color: #ffffff !important;
     text-align: center !important;
     white-space: nowrap !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-weight: 600 !important;
   }
 
   .box-button img {
     width: 28px !important;
     height: 28px !important;
     margin-right: 0 !important;
+  }
+}
+/* Desktop Styles */
+@media screen and (min-width: 769px) {
+  .box-button::after {
+    display: none !important;
+  }
+  
+  .box-button span {
+    display: inline !important;
   }
 }
 </style>

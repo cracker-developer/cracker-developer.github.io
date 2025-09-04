@@ -11,15 +11,11 @@ image:
 
 🧰 Writeup Overview
 
-Bypass Oracle 9's security protocol and access the sealed transmission via Vulnerability Known as <a href="https://owasp.org/www-community/attacks/PromptInjection" target="_blank">AI Prompt Injection</a>.
+Bypass Oracle 9's security protocol and access the sealed transmission via Vulnerability Known as <a href="https://owasp.org/www-community/attacks/PromptInjection" target="_blank">AI Prompt Injection</a>
 
-<a href="https://tryhackme.com/room/oracle9"
-target="_blank"
-class="box-button" 
-data-mobile-text="Oracle9 CTF Challenge | TryHackMe"
-style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oracle9 CTF Challenge | TryHackMe
-<img src="https://tryhackme.com/r/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
+<a href="https://tryhackme.com/room/oracle9" target="_blank" class="box-button" data-mobile-text="Oracle9 CTF Challenge | TryHackMe" style="display: flex; width: 100%; max-width: 1000px; align-items: center; justify-content: center; background: linear-gradient(135deg, #2a0e0e 0%, #1a0505 100%); padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); color: #ff4444; text-decoration: none; font-family: Arial, sans-serif; font-weight: bold; border: 1px solid #ff5555; margin: 10px auto; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 0 25px rgba(255, 0, 0, 0.7)'; this.style.color='#ffffff';" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 15px rgba(255, 0, 0, 0.3)'; this.style.color='#ff4444';">
+<span>Oracle9 CTF Challenge | TryHackMe</span>
+<img src="https://tryhackme.com/r/favicon.png" alt="Icon" style="width: 48px; height: 48px; margin-right: 10px; filter: hue-rotate(300deg) brightness(0.9); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'; this.style.filter='hue-rotate(320deg) brightness(1.3)';" onmouseout="this.style.transform='scale(1)'; this.style.filter='hue-rotate(300deg) brightness(0.9)';">
 </a>
 
 We simply write a specific prompt, known in the hacker community as a `Jailbreak Prompt`, to bypass the restrictions imposed on the target LLM, as shown below.
@@ -32,22 +28,14 @@ here we go access to this <a href="https://tryhackme.com/room/introtoaisecurityt
 
 **Powerful resources to delve deeper into this attack :**
 
-<a href="https://github.com/topics/prompt-injection?"
-target="_blank"
-class="box-button" 
-data-mobile-text="Repositories for Real-world practice | Github"
-style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Repositories for Real-world practice | Github
-  <img src="https://github.githubassets.com/favicons/favicon.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
+<a href="https://github.com/topics/prompt-injection?" target="_blank" class="box-button" data-mobile-text="Repositories for Real-world practice | Github" style="display: flex; width: 100%; max-width: 1000px; align-items: center; justify-content: center; background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); color: #a1a1a1; text-decoration: none; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 600; border: 2px solid #404040; margin: 10px auto; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 0 20px rgba(255, 255, 255, 0.3)'; this.style.borderColor='#666';" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.4)'; this.style.borderColor='#404040';">
+<span>Repositories for Real-world practice | Github</span>
+<img src="https://github.githubassets.com/favicons/favicon.png" alt="Icon" style="width: 48px; height: 48px; margin-right: 10px; transition: all 0.3s ease; filter: brightness(0.8);" onmouseover="this.style.transform='scale(1.1)'; this.style.filter='brightness(1.2)';" onmouseout="this.style.transform='scale(1)'; this.style.filter='brightness(0.8)';">
 </a>
 
-<a href="https://ctf.hackthebox.com/pack/ai-prompt-injection-essentials"
-target="_blank"
-class="box-button" 
-data-mobile-text="Some of machines AI Prompt Injection | HTB"
-style="display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); color: #a1a1a1ff; text-decoration: none;">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Some of machines AI Prompt Injection | HTB
-  <img src="/images/TryHackMe/Oracle9/HTB.png" alt="icon" style="width: 48px; height: 48px; margin-right: 10px;">
+<a href="https://ctf.hackthebox.com/pack/ai-prompt-injection-essentials" target="_blank" class="box-button" data-mobile-text="Some of machines AI Prompt Injection | HTB" style="display: flex; width: 100%; max-width: 1000px; align-items: center; justify-content: center; background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); color: #a1a1a1; text-decoration: none; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 600; border: 2px solid #404040; margin: 10px auto; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 0 20px rgba(255, 255, 255, 0.3)'; this.style.borderColor='#666';" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.4)'; this.style.borderColor='#404040';">
+<span>Some of machines AI Prompt Injection | HTB</span>
+<img src="/images/TryHackMe/Oracle9/HTB.png" alt="Icon" style="width: 48px; height: 48px; margin-right: 10px; transition: all 0.3s ease; filter: brightness(0.8);" onmouseover="this.style.transform='scale(1.1)'; this.style.filter='brightness(1.2)';" onmouseout="this.style.transform='scale(1)'; this.style.filter='brightness(0.8)';">
 </a>
 
 ---
@@ -114,48 +102,45 @@ img:center {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-/* Mobile-only responsive styles */
-@media (max-width: 768px) {
-  .gif-responsive {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  .video-responsive {
-    width: 100% !important;
-    max-width: 100% !important;
-    aspect-ratio: auto;  /* let phone use natural aspect ratio */
-    height: auto !important;
-  }
-
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
   .box-button {
     max-width: 100% !important;
     width: 100% !important;
     padding: 12px 16px !important;
     justify-content: center !important;
-    gap: 10px !important;
-    position: relative;
+    gap: 8px !important;
   }
-
-  /* Hide desktop text */
-  .box-button {
-    font-size: 0 !important;
+  /* Hide desktop text on mobile */
+  .box-button span {
+    display: none !important;
   }
 
   /* Show mobile text from data attribute */
   .box-button::after {
     content: attr(data-mobile-text) !important;
     font-size: 14px !important;
-    color: #a1a1a1 !important;
+    color: #ffffff !important;
     text-align: center !important;
     white-space: nowrap !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-weight: 600 !important;
   }
 
   .box-button img {
     width: 28px !important;
     height: 28px !important;
     margin-right: 0 !important;
+  }
+}
+/* Desktop Styles */
+@media screen and (min-width: 769px) {
+  .box-button::after {
+    display: none !important;
+  }
+  
+  .box-button span {
+    display: inline !important;
   }
 }
 </style>
