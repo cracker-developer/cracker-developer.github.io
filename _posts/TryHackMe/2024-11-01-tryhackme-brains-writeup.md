@@ -452,9 +452,10 @@ img:center {
   .box-button {
     max-width: 100% !important;
     width: 100% !important;
-    padding: 12px 16px !important;
+    padding: 10px 14px !important;
     justify-content: center !important;
-    gap: 8px !important;
+    gap: 6px !important;
+    position: relative;
   }
   /* Hide desktop text on mobile */
   .box-button span {
@@ -464,13 +465,152 @@ img:center {
   /* Show mobile text from data attribute */
   .box-button::after {
     content: attr(data-mobile-text) !important;
-    font-size: 14px !important;
-    color: #ffffff !important;
+    font-size: 10px !important;
     text-align: center !important;
     white-space: nowrap !important;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-    font-weight: 600 !important;
+    font-weight: 1000 !important;
   }
+
+      /* DEFAULT: Use #a1a1a1 for most buttons */
+    .box-button::after {
+      color: #a1a1a1 !important;
+    }
+
+    /* Specific color overrides for each button style */
+    
+    /* CYBER BLUE NEON - Blue text */
+    .box-button[style*="color: #00ccff"]::after,
+    .box-button[style*="color:#00ccff"]::after {
+      color: #00ccff !important;
+    }
+
+    /* HACKER GREEN TERMINAL - Green text */
+    .box-button[style*="color: #00ff88"]::after,
+    .box-button[style*="color:#00ff88"]::after {
+      color: #00ff88 !important;
+    }
+
+    /* PURPLE NEON LIGHT - Purple text */
+    .box-button[style*="color: #cc00ff"]::after,
+    .box-button[style*="color:#cc00ff"]::after {
+      color: #cc00ff !important;
+    }
+
+    /* RED ALERT GLOW - Red text (#ff4444) */
+    .box-button[style*="color: #ff4444"]::after,
+    .box-button[style*="color:#ff4444"]::after,
+    .box-button[style*="color: #ff5555"]::after,
+    .box-button[style*="color:#ff5555"]::after {
+      color: #ff4444 !important;
+    }
+
+    /* ORANGE SUNLIGHT - Orange text */
+    .box-button[style*="color: #ffaa00"]::after,
+    .box-button[style*="color:#ffaa00"]::after {
+      color: #ffaa00 !important;
+    }
+
+    /* MINIMAL LIGHT SHINE - Dark text for light background */
+    .box-button[style*="background: #ffffff"]::after,
+    .box-button[style*="background:#ffffff"]::after,
+    .box-button[style*="color: #333333"]::after,
+    .box-button[style*="color:#333333"]::after {
+      color: #333333 !important;
+    }
+
+    /* TEAL CYBER GLOW - Teal text */
+    .box-button[style*="color: #5eead4"]::after,
+    .box-button[style*="color:#5eead4"]::after {
+      color: #5eead4 !important;
+    }
+
+    /* PINK NEON LIGHT - Pink text */
+    .box-button[style*="color: #f9a8d4"]::after,
+    .box-button[style*="color:#f9a8d4"]::after {
+      color: #f9a8d4 !important;
+    }
+
+    /* FOREST GREEN LIGHT - Lime text */
+    .box-button[style*="color: #bef264"]::after,
+    .box-button[style*="color:#bef264"]::after {
+      color: #bef264 !important;
+    }
+
+    /* DARK RED WINE GLOW - Light red text */
+    .box-button[style*="color: #fecaca"]::after,
+    .box-button[style*="color:#fecaca"]::after {
+      color: #fecaca !important;
+    }
+
+    /* LIGHT BLUE SKY SHINE - Blue text */
+    .box-button[style*="color: #1e40af"]::after,
+    .box-button[style*="color:#1e40af"]::after {
+      color: #1e40af !important;
+    }
+
+    /* DARK ORANGE GLOW - Orange text */
+    .box-button[style*="color: #fdba74"]::after,
+    .box-button[style*="color:#fdba74"]::after {
+      color: #fdba74 !important;
+    }
+
+    /* CYBER YELLOW - Yellow text */
+    .box-button[style*="color: #fef08a"]::after,
+    .box-button[style*="color:#fef08a"]::after {
+      color: #fef08a !important;
+    }
+
+    /* DEEP SPACE - Purple text */
+    .box-button[style*="color: #9370db"]::after,
+    .box-button[style*="color:#9370db"]::after {
+      color: #9370db !important;
+    }
+
+    /* ELECTRIC PINK - Pink text */
+    .box-button[style*="color: #e879f9"]::after,
+    .box-button[style*="color:#e879f9"]::after {
+      color: #e879f9 !important;
+    }
+
+    /* LAVA RED - Light red text */
+    .box-button[style*="color: #fca5a5"]::after,
+    .box-button[style*="color:#fca5a5"]::after {
+      color: #fca5a5 !important;
+    }
+
+    /* AQUA MARINE - Teal text */
+    .box-button[style*="color: #99f6e4"]::after,
+    .box-button[style*="color:#99f6e4"]::after {
+      color: #99f6e4 !important;
+    }
+
+    /* ROYAL PURPLE - Light purple text */
+    .box-button[style*="color: #d8b4fe"]::after,
+    .box-button[style*="color:#d8b4fe"]::after {
+      color: #d8b4fe !important;
+    }
+
+    /* EMERALD GREEN - Green text */
+    .box-button[style*="color: #6ee7b7"]::after,
+    .box-button[style*="color:#6ee7b7"]::after {
+      color: #6ee7b7 !important;
+    }
+
+    /* MIDNIGHT BLUE - Light blue text */
+    .box-button[style*="color: #93c5fd"]::after,
+    .box-button[style*="color:#93c5fd"]::after {
+      color: #93c5fd !important;
+    }
+
+    /* Light backgrounds with colored text - use original colors */
+    .box-button[style*="background: linear-gradient(135deg, #fef3c7"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #fde68a"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #f8fafc"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #dbeafe"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #bfdbfe"]::after {
+      color: #333333 !important; /* Dark text for better contrast on light backgrounds */
+    }
 
   .box-button img {
     width: 28px !important;
