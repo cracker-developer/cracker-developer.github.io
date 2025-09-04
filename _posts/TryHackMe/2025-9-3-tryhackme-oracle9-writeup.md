@@ -119,12 +119,11 @@ img:center {
   /* Show mobile text from data attribute */
   .box-button::after {
     content: attr(data-mobile-text) !important;
-    font-size: 14px !important;
+    font-size: 10px !important;
     color: #ffffff !important;
     text-align: center !important;
     white-space: nowrap !important;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-    font-weight: 600 !important;
   }
 
   .box-button img {

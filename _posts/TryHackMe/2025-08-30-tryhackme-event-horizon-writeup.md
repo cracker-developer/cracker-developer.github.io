@@ -705,13 +705,42 @@ img:center {
   /* Show mobile text from data attribute */
   .box-button::after {
     content: attr(data-mobile-text) !important;
-    font-size: 14px !important;
-    color: #ffffff !important;
+    font-size: 9px !important;
     text-align: center !important;
     white-space: nowrap !important;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
     font-weight: 600 !important;
   }
+
+  /* Dynamic text color based on button background */
+    .box-button[style*="background: linear-gradient(135deg, #2c2c2c"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #1a1a1a"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #0f2027"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #0d1b1e"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #1a001a"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #2a0e0e"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #2a1a0e"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #1e1b4b"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #0c4a6e"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #1a2e05"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #450a0a"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #000000"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #4c1d95"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #7f1d1d"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #0f766e"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #581c87"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #064e3b"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #9a3412"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #1e3a8a"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #991b1b"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #5b21b6"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #1f2937"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #7c2d12"]::after,
+    .box-button[style*="background: linear-gradient(135deg, #422006"]::after,
+    .box-button[style*="background-color: #2d3748"]::after,
+    .box-button[style*="background-color: #0d1b1e"]::after {
+      color: #ffffff !important; /* White text for dark backgrounds */
+    }
 
   .box-button img {
     width: 28px !important;
