@@ -9,7 +9,7 @@ image:
   path: /images/TryHackMe/Brains/room_image.webp
 ---
 
-🧰 Writeup Overview
+🧰 Writeup Overview.
 
 we focus on advanced paging, `directory obfuscation`, and `exploiting vulnerabilities within JetBrains TeamCity`. You will `bypass authentication` *(CVE-2024-27198)* and execute remote code *(CVE-2024-27199)* by sending crafted HTTP requests. The guide also covers setting up an admin user to execute commands and achieve reverse shell access, and we conclude with guidance on `using Splunk` to analyze incidents.
 
