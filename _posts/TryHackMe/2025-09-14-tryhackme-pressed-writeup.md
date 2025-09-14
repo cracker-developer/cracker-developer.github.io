@@ -11,7 +11,7 @@ image:
 
 > *🧰 Writeup Overview*
  - *Attack Flow*  
- 📧 **Email** `SMTP` → 📄 **Malicious Macro** `ODS` → 🖥️ **RE C2 Malware** `EXE` → 🔄 **Extact Encrypted Traffic** `AES-256-CBC` → 🔓 **Decryption** → 📌 **Flag Recovery**  
+ 📧 `SMTP` **Email Extraction** → 📄 **Locate the Malicious Macro** `ODS` → 🖥️ **RE C2 Malware** `EXE` → 🔄 **Extract Encrypted Traffic** `AES-256-CBC` → 🔓 **Decryption SSL Traffic** → 📌 **Flag Recovery**  
  - *Key Steps* 
  1. **Email Analysis** → Extract SMTP creds & malicious macro.  
  2. **Binary Extraction** → Recover `client.exe` (skip HTTP headers).  
@@ -224,7 +224,7 @@ extracts the `raw TCP stream` containing `client.exe` from `packet 1207` in the 
 ```sh
 tshark -r traffic.pcapng -q -Y 'tcp contains "client.exe"' -z follow,tcp,raw,1207 | xxd -r -p > craved-client.bin
 ```
-
+{: .wrap }
 The extracted file needs cleaning - we remove HTTP headers using `dd`:
 
 > Before begning into craving process let Explain the main function from using dd tool
@@ -567,6 +567,7 @@ tshark -r traffic.pcapng -Y 'frame.number == 6728' -T fields -e tcp.stream
 ```sh
 tshark -r traffic.pcapng -q -z follow,tcp,raw,1208 | sed '1,6d; $d' | NF | xxd -r -p > ciphertext.bin
 ```
+{: .wrap }
 OR if you want you can use `Wireshark`
 
 > Wireshark allows us to copy packet bytes as a hex stream.
@@ -580,7 +581,7 @@ xxd -r -p ciphertext.hex > ciphertext.bin
 ```
 
 
-> To remove the trailing 0a (newline character), use the -n flag with echo
+> To remove the trailing `0a` (newline character), use the `-n` flag with `echo`
 {: .prompt-warning }
 
 Converts the string into hex format (plain hexdump, no offsets/ASCII).
@@ -596,6 +597,7 @@ Decrypt the File `ciphertext.bin` with OpenSSL
 ```sh
 openssl enc -d -aes-256-cbc -nopad -K 72[REDACTED] -iv 704[REDACTED] -in ciphertext.bin -out decrypted.txt
 ```
+{: .wrap }
 
 Capture the results
 ```sh
