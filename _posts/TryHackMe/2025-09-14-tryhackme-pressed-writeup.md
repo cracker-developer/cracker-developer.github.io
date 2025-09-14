@@ -9,15 +9,36 @@ image:
   path: /images/TryHackMe/Pressed/room_image.webp
 ---
 
-> *🧰 Writeup Overview*
- - *Attack Flow*  
- 📧 `SMTP` **Email Extraction** → 📄 **Locate the Malicious Macro** `ODS` → 🖥️ **RE C2 Malware** `EXE` → 🔄 **Extract Encrypted Traffic** `AES-256-CBC` → 🔓 **Decryption SSL Traffic** → 📌 **Flag Recovery**  
- - *Key Steps* 
- 1. **Email Analysis** → Extract SMTP creds & malicious macro.  
- 2. **Binary Extraction** → Recover `client.exe` (skip HTTP headers).  
- 3. **Reverse Engineering** → Ghidra → AES-256-CBC `keys`/`IV`.  
- 4. **Traffic Decryption** → OpenSSL/Python → C2 commands (`whoami`, admin add).  
- 5. **Flags** → Found in **clients.csv** + macro output.
+*🧰 Writeup Overview*
+
+> *Attack Flow & Key Steps*
+
+ **🔻 Initial Access:**
+ Phishing Email `SMTP` → Malicious Macro-Enabled Document `ODS`
+ 
+ **🔻 Execution:**
+ User enables content → Macro executes → Downloads & runs `client.exe` with `curl` command
+ 
+ **🔻 Persistence & C2:**
+ client.exe establishes encrypted comms `AES-256-CBC` with attacker C2  server
+ 
+ **🔻 Discovery & Lateral Movement:**
+ C2 commands executed on victim machine: e.g `whoami`, `admin add`
+ 
+ **🔻 Exfiltration & Objectives:**
+ Data theft `clients.csv` → Flag recovery from system and macro output
+ 
+> *Anatomy of a Breach: From Phish to Flag*
+
+| <font color="#ff5555">Phase</font> | <font color="#ff5555">Technique / Tool</font> | <font color="#ff5555">Finding</font> |
+| :--- | :--- | :--- |        
+| 📧 Email Analysis       | SMTP Headers / Body Inspection	              | Extract SMTP credentials & URL of malicious macro document.                                        |                       
+| 📄 Macro Analysis	      | OLE Analysis / VBA Deobfuscation	            | Recover the PowerShell command to download the `client.exe` payload.                               |
+| 🖥️ Binary Extraction	   | Network Analysis / Scripting                  | Scripting	Download client.exe from URL, `stripping HTTP headers` to get raw binary.               |
+| ⚙️ Reverse Engineering	| Ghidra / Static Analysis	                    | Locate hardcoded `AES-256-CBC Key` and Initialization Vector `IV`.                                 |
+| 🔓 Traffic Decryption	  | OpenSSL / Python + pycryptodome / Cyberchef	  | Decrypt `SSL/TLS traffic` to reveal C2 commands: whoami, admin add.                                |
+| 📌 Flag Recovery	      | Data Correlation	                            | Find flags in the exfiltrated `clients.csv` file and the `output of a macro command`.              |
+
 
 <a href="https://tryhackme.com/room/pressedroom" target="_blank" class="box-button" data-mobile-text="Pressed CTF Challenge | TryHackMe" style="display: flex; width: 100%; max-width: 1000px; align-items: center; justify-content: center; background: linear-gradient(135deg, #2a0e0e 0%, #1a0505 100%); padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); color: #ff4444; text-decoration: none; font-family: Arial, sans-serif; font-weight: bold; border: 1px solid #ff5555; margin: 10px auto; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 0 25px rgba(255, 0, 0, 0.7)'; this.style.color='#ffffff';" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 15px rgba(255, 0, 0, 0.3)'; this.style.color='#ff4444';">
 <span>Pressed CTF Challenge | TryHackMe</span>
