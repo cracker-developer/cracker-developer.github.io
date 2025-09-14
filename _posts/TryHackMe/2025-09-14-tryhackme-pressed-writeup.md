@@ -9,7 +9,15 @@ image:
   path: /images/TryHackMe/Pressed/room_image.webp
 ---
 
-🧰 Writeup Overview
+> *🧰 Writeup Overview*
+ - *Attack Flow*  
+ 📧 **Email** `SMTP` → 📄 **Malicious Macro** `ODS` → 🖥️ **RE C2 Malware** `EXE` → 🔄 **Extact Encrypted Traffic** `AES-256-CBC` → 🔓 **Decryption** → 📌 **Flag Recovery**  
+ - *Key Steps* 
+ 1. **Email Analysis** → Extract SMTP creds & malicious macro.  
+ 2. **Binary Extraction** → Recover `client.exe` (skip HTTP headers).  
+ 3. **Reverse Engineering** → Ghidra → AES-256-CBC `keys`/`IV`.  
+ 4. **Traffic Decryption** → OpenSSL/Python → C2 commands (`whoami`, admin add).  
+ 5. **Flags** → Found in **clients.csv** + macro output.
 
 <a href="https://tryhackme.com/room/pressedroom" target="_blank" class="box-button" data-mobile-text="Pressed CTF Challenge | TryHackMe" style="display: flex; width: 100%; max-width: 1000px; align-items: center; justify-content: center; background: linear-gradient(135deg, #2a0e0e 0%, #1a0505 100%); padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); color: #ff4444; text-decoration: none; font-family: Arial, sans-serif; font-weight: bold; border: 1px solid #ff5555; margin: 10px auto; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 0 25px rgba(255, 0, 0, 0.7)'; this.style.color='#ffffff';" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 15px rgba(255, 0, 0, 0.3)'; this.style.color='#ff4444';">
 <span>Pressed CTF Challenge | TryHackMe</span>
