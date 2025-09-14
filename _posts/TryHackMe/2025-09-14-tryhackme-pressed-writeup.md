@@ -496,7 +496,7 @@ void aes_decrypt(undefined8 param_1,undefined4 param_2,longlong param_3,int *par
 
 After obtaining the `AES Key` and `IV` ==> Key pairs, which use `AES-256-CBC` mode, now we can decrypt C2 traffic.
 
-You can check <a href="https://www.youtube.com/watch?v=yokG8RnLivs" target="_blank">here</a> and the video shown below for more details about the algorithm.
+You can check <a href="https://www.youtube.com/watch?v=yokG8RnLivs" target="_blank">here</a> and from the video shown below for more details about the algorithm.
 {% youtube "https://www.youtube.com/watch?v=Au1RhzK55y4" %}
 
 <br>
