@@ -1,6 +1,6 @@
 ---
 title: 'TryHackMe: Thompson CTF Walkthrough' 
-author: 0xcracker
+author: 0xcrax
 categories: [TryHackMe]
 tags: [ffuf, Subdomain-Enumeration, Subdirectory-Enumeration, rustscan, tomcat, crontab, rlwrap, msfvenom]
 render_with_liquid: true

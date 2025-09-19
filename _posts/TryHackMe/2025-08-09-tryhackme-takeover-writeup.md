@@ -1,6 +1,6 @@
 ---
 title: 'TryHackMe: TakeOver CTF Walkthrough'
-author: 0xcracker
+author: 0xcrax
 categories: [TryHackMe]
 tags: [ffuf, Subdomain-Enumeration, DNS, DNS-Enumeration, Subdirectory-Enumeration]
 render_with_liquid: true

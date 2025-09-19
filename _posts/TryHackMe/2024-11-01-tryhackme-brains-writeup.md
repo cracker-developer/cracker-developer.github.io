@@ -1,6 +1,6 @@
 ---
 title: 'TryHackMe: Brains CTF Walkthrough'
-author: 0xcracker
+author: 0xcrax
 categories: [TryHackMe]
 tags: [web-application, rustscan, dirsearch, sed, curl, authentication-bypass, RCE, splunk]
 render_with_liquid: true

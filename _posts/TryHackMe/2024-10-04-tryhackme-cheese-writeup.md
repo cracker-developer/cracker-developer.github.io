@@ -1,6 +1,6 @@
 ---
 title: 'TryHackMe: Cheese CTF Walkthrough'
-author: 0xcracker
+author: 0xcrax
 categories: [TryHackMe]
 tags: [web, rustscan, portspoofing, feroxbuster, sqli, sqlmap, LFI, RCE, ssh, service, timer, suid, sudo, sysmemstl, grep, openssl, unshadow]
 render_with_liquid: true

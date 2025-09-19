@@ -1,6 +1,6 @@
 ---
 title: 'TryHackMe: Event Horizon CTF Walkthrough'
-author: 0xcracker
+author: 0xcrax
 categories: [TryHackMe]
 tags: [wireshark, tshark, forensics, C2, Covenant C2, network, SMTP, ESMTP, POP, HTTP, regex]
 render_with_liquid: true

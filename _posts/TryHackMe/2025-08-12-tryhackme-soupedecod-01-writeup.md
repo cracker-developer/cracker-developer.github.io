@@ -1,6 +1,6 @@
 ---
 title: 'TryHackMe: Soupedecode 01 CTF Walkthrough'
-author: 0xcracker
+author: 0xcrax
 categories: [TryHackMe]
 tags: [windows, rustscan, SMB, enum4linux, nxc, netexec, smbclient, impacket, impacket-smbclient, impacket-smbexec, impacket-psexec, impacket-GetUserSPNs, john, hashcat, rid-brute, Password Spraying, Hash Spraying, crackmapexec, Kerberoasting, kerbrute, kerberoast, SPN, TGS, Kerberoastable, AS-REP Roasting, AD, DC, Active Directory, pass-the-hash, RCE]
 render_with_liquid: true

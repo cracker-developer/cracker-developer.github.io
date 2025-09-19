@@ -1,6 +1,6 @@
 ---
 title: 'TryHackMe: Pressed CTF Walkthrough'
-author: 0xcracker
+author: 0xcrax
 categories: [TryHackMe]
 tags: [wireshark, tshark, forensics, malicious macros, Reverse-Engineering, C2, network, SMTP, ESMTP, POP, HTTP, openssl, sed, awk, xxd, dd, hexdump, Malware, regex, AES-256-CBC, ghidra]
 render_with_liquid: true

@@ -1,6 +1,6 @@
 ---
 title: 'TryHackMe: Oracle9 CTF Walkthrough'
-author: 0xcracker
+author: 0xcrax
 categories: [TryHackMe]
 tags: [AI, LLM, Prompt Injection, Oracle]
 render_with_liquid: true
