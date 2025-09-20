@@ -6,7 +6,7 @@ tags: [wireshark, tshark, forensics, malicious macros, Reverse-Engineering, C2, 
 render_with_liquid: true
 img_path: /images/TryHackMe/Pressed
 image:
-  path: /images/TryHackMe/Pressed/room_image.webp
+  path: /images/TryHackMe/Pressed/room_image.jpg
 ---
 
 *🧰 Writeup Overview*
