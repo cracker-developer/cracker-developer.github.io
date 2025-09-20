@@ -6,7 +6,7 @@ tags: [wireshark, tshark, forensics, malicious macros, Reverse-Engineering, C2, 
 render_with_liquid: true
 img_path: /images/TryHackMe/Pressed
 image:
-  path: /images/TryHackMe/Pressed/room_image.jpg
+  path: /images/TryHackMe/Pressed/room_image.webp
 ---
 
 *🧰 Writeup Overview*
@@ -44,6 +44,8 @@ image:
 <span>Pressed CTF Challenge | TryHackMe</span>
 <img src="https://tryhackme.com/r/favicon.png" alt="Icon" style="width: 48px; height: 48px; margin-right: 10px; filter: hue-rotate(300deg) brightness(0.9); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'; this.style.filter='hue-rotate(320deg) brightness(1.3)';" onmouseout="this.style.transform='scale(1)'; this.style.filter='hue-rotate(300deg) brightness(0.9)';">
 </a>
+
+---
 
 ## Initial Email Investigation
 
